@@ -6,17 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017 | 桃子的博客</title>
+  <title>15个Javascript优化小技巧总结 | 桃子的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="从未试图抱怨，一直努力改变">
-<meta property="og:type" content="website">
-<meta property="og:title" content="桃子的博客">
-<meta property="og:url" content="http://yoursite.com/archives/2017/index.html">
+  <meta name="description" content="JavaScript一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言，内置支持类型。它的解释器被称为JavaScript引擎，为浏览器的一部分，广泛用于客户端的脚本语言，最早是在HTML（标准通用标记语言下的一个应用）网页上使用，用来给HTML网页增加动态功能。 不仅如此，JavaScript还是很多新手踏入编程世界的第一个语言。既可以用来显示浏览器中的简单提示框，也可以通过nodebo">
+<meta name="keywords" content="Javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="15个Javascript优化小技巧总结">
+<meta property="og:url" content="http://yoursite.com/2017/05/08/ptlang/index.html">
 <meta property="og:site_name" content="桃子的博客">
-<meta property="og:description" content="从未试图抱怨，一直努力改变">
+<meta property="og:description" content="JavaScript一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言，内置支持类型。它的解释器被称为JavaScript引擎，为浏览器的一部分，广泛用于客户端的脚本语言，最早是在HTML（标准通用标记语言下的一个应用）网页上使用，用来给HTML网页增加动态功能。 不仅如此，JavaScript还是很多新手踏入编程世界的第一个语言。既可以用来显示浏览器中的简单提示框，也可以通过nodebo">
+<meta property="og:updated_time" content="2017-05-08T12:37:01.637Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="桃子的博客">
-<meta name="twitter:description" content="从未试图抱怨，一直努力改变">
+<meta name="twitter:title" content="15个Javascript优化小技巧总结">
+<meta name="twitter:description" content="JavaScript一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言，内置支持类型。它的解释器被称为JavaScript引擎，为浏览器的一部分，广泛用于客户端的脚本语言，最早是在HTML（标准通用标记语言下的一个应用）网页上使用，用来给HTML网页增加动态功能。 不仅如此，JavaScript还是很多新手踏入编程世界的第一个语言。既可以用来显示浏览器中的简单提示框，也可以通过nodebo">
   
     <link rel="alternative" href="/atom.xml" title="桃子的博客" type="application/atom+xml">
   
@@ -156,36 +158,137 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-ptlang" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/08/ptlang/" class="archive-article-date">
-  	<time datetime="2017-05-08T12:30:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-08</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/08/ptlang/">15个Javascript优化小技巧总结</a>
+    <h1 class="article-title" itemprop="name">
+      15个Javascript优化小技巧总结
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/05/08/ptlang/" class="archive-article-date">
+  	<time datetime="2017-05-08T12:30:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>JavaScript一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言，内置支持类型。它的解释器被称为JavaScript引擎，为浏览器的一部分，广泛用于客户端的脚本语言，最早是在HTML（标准通用标记语言下的一个应用）网页上使用，用来给HTML网页增加动态功能。</p>
+<p>不仅如此，JavaScript还是很多新手踏入编程世界的第一个语言。既可以用来显示浏览器中的简单提示框，也可以通过nodebot或nodruino来控制机器人。能够编写结构清晰、性能高效的JavaScript代码的开发人员，现如今已成了招聘市场最受追捧的人。</p>
+<p>在这篇文章中，我将为大家分享一些JavaScript的技巧、秘诀和最佳实践。不管是浏览器的JavaScript引擎，还是服务器端JavaScript解释器，均适用。</p>
+<a id="more"></a>
+<p>#1. 使用===取代==<br>==和!=操作符会在需要的情况下自动转换数据类型。但===和!==不会，它们会同时比较值和数据类型，这也使得它们要比==和!=快。</p>
+<pre><code>[10] === 10 // is false
+[10] == 10 // is true
+&apos;10&apos; == 10 // is true
+&apos;10&apos; === 10 // is false
+[] == 0 // is true
+[] === 0 // is false
+&apos;&apos; == false // is true but true == &quot;a&quot; is false
+&apos;&apos; === false // is false
+</code></pre><p>#2. 使用对象构造器</p>
+<pre><code>function Person(firstName, lastName){
+this.firstName = firstName;
+this.lastName = lastName;
+}
+var Saad = new Person(&quot;Saad&quot;, &quot;Mousliki&quot;);
+</code></pre><p>#3. 使用自调用函数<br>函数在创建之后直接自动执行，通常称之为自调用匿名函数（Self-Invoked Anonymous Function）或直接调用函数表达式（Immediately Invoked Function Expression ）。格式如下：</p>
+<pre><code>(function(){
+// 置于此处的代码将自动执行
+})();
+(function(a,b){
+var result = a+b;
+return result;
+})(10,20)
+</code></pre><p>#4. 通过for-in循环检查对象的属性<br>下面这样的用法，可以防止迭代时进入到对象的原型属性中。</p>
+<pre><code>for (var name in object) {
+if (object.hasOwnProperty(name)) {
+// do something with name
+}
+}
+</code></pre><p>#5. 临时存储用于计算和查询的变量<br>在jQuery选择器中，可以临时存储整个DOM元素。</p>
+<pre><code>var navright = document.querySelector(&apos;#right&apos;);
+var navleft = document.querySelector(&apos;#left&apos;);
+var navup = document.querySelector(&apos;#up&apos;);
+var navdown = document.querySelector(&apos;#down&apos;);
+</code></pre><p>#6. 避免在数组中使用负数做索引</p>
+<pre><code>var numbersArray = [1,2,3,4,5];
+var from = numbersArray.indexOf(&quot;foo&quot;) ; // from is equal to -1
+numbersArray.splice(from,2); // will return [5]
+</code></pre><p>注意：传给splice的索引参数不要是负数，当是负数时，会从数组结尾处删除元素。</p>
+<p>#7. 不要使用eval()或者函数构造器<br>eval()和函数构造器（Function consturctor）的开销较大，每次调用，JavaScript引擎都要将源代码转换为可执行的代码。</p>
+<pre><code>var func1 = new Function(functionCode);
+var func2 = eval(functionCode);
+</code></pre><p>#8. 避免使用with()<br>使用with()可以把变量加入到全局作用域中，因此，如果有其它的同名变量，一来容易混淆，二来值也会被覆盖。</p>
+<p>#9. 使用switch/case代替一大叠的if/else<br>当判断有超过两个分支时使用switch/case要更快一些，而且也更优雅，更利于代码的组织，当然，如果有超过10个分支，就不要使用switch/case了。</p>
+<p>#10. 使用对象作为对象的原型<br>下面这样，便可以给定对象作为参数，来创建以此为原型的新对象：</p>
+<pre><code>function clone(object) {
+function OneShotConstructor(){};
+OneShotConstructor.prototype = object;
+return new OneShotConstructor();
+}
+clone(Array).prototype ; // []
+</code></pre><p>#11. HTML字段转换函数</p>
+<pre><code>function escapeHTML(text) {
+var replacements= {&quot;&lt;&quot;: &quot;&lt;&quot;, &quot;&gt;&quot;: &quot;&gt;&quot;,&quot;&amp;&quot;: &quot;&amp;&quot;, &quot;\&quot;&quot;: &quot;&quot;&quot;};
+return text.replace(/[&lt;&gt;&amp;&quot;]/g, function(character) {
+return replacements[character];
+});
+}
+</code></pre><p>#12. 首次为变量赋值时务必使用var关键字<br>变量没有声明而直接赋值得话，默认会作为一个新的全局变量，要尽量避免使用全局变量。</p>
+<p>#13. 字符串去空格<br>Java、C#和PHP等语言都实现了专门的字符串去空格函数，但JavaScript中是没有的，可以通过下面的代码来为String对象函数一个trim函数：</p>
+<pre><code>String.prototype.trim = function(){return this.replace(/^\s+|\s+$/g, &quot;&quot;);};
+JavaScript引擎已经有了trim()的原生实现。
+</code></pre><p>#14. 处理WebSocket的超时<br>通常情况下，WebSocket连接创建后，如果30秒内没有任何活动，服务器端会对连接进行超时处理，防火墙也可以对单位周期没有活动的连接进行超时处理。</p>
+<p>为了防止这种情况的发生，可以每隔一定时间，往服务器发送一条空的消息。可以通过下面这两个函数来实现这个需求，一个用于使连接保持活动状态，另一个专门用于结束这个状态。</p>
+<pre><code>var timerID = 0;
+function keepAlive() {
+var timeout = 15000;
+if (webSocket.readyState == webSocket.OPEN) {
+webSocket.send(&apos;&apos;);
+}
+timerId = setTimeout(keepAlive, timeout);
+}
+function cancelKeepAlive() {
+if (timerId) {
+cancelTimeout(timerId);
+}
+}
+</code></pre><p>#15. 开发时注意代码结构，上线前检查并压缩JavaScript代码<br>别忘了在写代码时使用一个代码美化工具。使用JSLint(一个语法检查工具)并且在上线前压缩代码（比如使用JSMin）。注：现在代码压缩一般推荐 UglifyJS (<a href="https://github.com/mishoo/UglifyJS2" target="_blank" rel="external">https://github.com/mishoo/UglifyJS2</a>)</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -197,19 +300,79 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/05/08/ptlang/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
+
   
 
-    
+
+
+
+  
+  
+  
+
+  
+
+  
 
 
           </div>
@@ -232,8 +395,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

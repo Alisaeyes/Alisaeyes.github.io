@@ -158,6 +158,72 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-webpack-fl" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/20/webpack-fl/">webpack提取公共代码及js，css的分离操作</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/20/webpack-fl/" class="archive-article-date">
+  	<time datetime="2017-06-20T13:24:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>其实早就想和大家分享下webpack，由于最近较忙正在搞一个桌面应用，所以抽空给大家聊聊webpack的独立打包。<br>相信点开此文章的朋友都已经接触过webpack了，所以在这咱们也不废话了，基础知识咱不讲解，这里咱们就直杀主题了，如果是没有基础的朋友建议可以先了解一下webpack的打包过程，当然我也不会完全不去管没有基础的朋友，下面我也会说一下关于webpack配置方面的说明，好了，下面咱们直接先上代码，然后我来给各位一一剖解：</p>
+<pre><code>var webpack = require(&apos;webpack&apos;);
+var path = require(&quot;path&quot;);
+var HtmlWebpackPlugin = require(&apos;html-webpack-plugin&apos;);
+var ExtractTextPlugin = require(&apos;extract-text-webpack-plugin&apos;);
+</code></pre>
+        
+          <a class="article-more-a" href="/2017/06/20/webpack-fl/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/20/webpack-fl/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-flex-layout" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -387,6 +453,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Javascript</a>

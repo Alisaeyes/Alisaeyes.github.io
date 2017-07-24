@@ -9,13 +9,13 @@
   <title>Meta标签总结及常见问题的解决方法 | 桃子的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="自古以来都是能人掌天下，在技场上也是同样的道理。一个优秀的开发者，在开发一个项目关注的不止只是功能的实现或视图的展现，想必在项目开发中大家都会组织功能封装，减少代码重写，减小请求负重，提升加载速度等。在我看来，这些都只是家常便饭，因为我一直认为，一名优秀的开发者，不只是单方面的只关注于技术层次，我们更应该学会总结，总结每次项目开发中所遇到的种种问题，碰到的各种奇葩事情，这样也是在更快的提升自己的能">
-<meta name="keywords" content="html,css,html5,meta">
+<meta name="keywords" content="html5">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Meta标签总结及常见问题的解决方法">
 <meta property="og:url" content="http://yoursite.com/2017/07/24/meta/index.html">
 <meta property="og:site_name" content="桃子的博客">
 <meta property="og:description" content="自古以来都是能人掌天下，在技场上也是同样的道理。一个优秀的开发者，在开发一个项目关注的不止只是功能的实现或视图的展现，想必在项目开发中大家都会组织功能封装，减少代码重写，减小请求负重，提升加载速度等。在我看来，这些都只是家常便饭，因为我一直认为，一名优秀的开发者，不只是单方面的只关注于技术层次，我们更应该学会总结，总结每次项目开发中所遇到的种种问题，碰到的各种奇葩事情，这样也是在更快的提升自己的能">
-<meta property="og:updated_time" content="2017-07-24T14:52:23.412Z">
+<meta property="og:updated_time" content="2017-07-24T15:00:57.538Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Meta标签总结及常见问题的解决方法">
 <meta name="twitter:description" content="自古以来都是能人掌天下，在技场上也是同样的道理。一个优秀的开发者，在开发一个项目关注的不止只是功能的实现或视图的展现，想必在项目开发中大家都会组织功能封装，减少代码重写，减小请求负重，提升加载速度等。在我看来，这些都只是家常便饭，因为我一直认为，一名优秀的开发者，不只是单方面的只关注于技术层次，我们更应该学会总结，总结每次项目开发中所遇到的种种问题，碰到的各种奇葩事情，这样也是在更快的提升自己的能">
@@ -180,7 +180,6 @@
       
         <p>自古以来都是能人掌天下，在技场上也是同样的道理。<br>一个优秀的开发者，在开发一个项目关注的不止只是功能的实现或视图的展现，想必在项目开发中大家都会组织功能封装，减少代码重写，减小请求负重，提升加载速度等。在我看来，这些都只是家常便饭，因为我一直认为，一名优秀的开发者，不只是单方面的只关注于技术层次，我们更应该学会总结，总结每次项目开发中所遇到的种种问题，碰到的各种奇葩事情，这样也是在更快的提升自己的能力及学问，下次开发就不会再重复出现相同问题，节省不必要浪费的时间，就能更快的交出自己的答案。如果你觉得我说的是那么回事，行，我的目的达到了 …</p>
 <p>好，上面扯了一段白话，下面咱们进入主题，讲讲我对于这些基础的总结吧！</p>
-<a id="more"></a>
 <p>一、meta标签的总结</p>
 <p>1.keywords,description(经常用到的两个)</p>
 <p>页面的关键字和描述，是写给搜索引擎看的，关键字可以有多个用 ‘,’号隔开</p>
@@ -224,7 +223,7 @@
 <pre><code>&amp;lt;meta name=&quot;browsermode&quot; content=&quot;application&quot;/&amp;gt;
 </code></pre><p>9.format-detection</p>
 <p>数据格式验证渲染：<br>telephone：而iPhone会自动把你这个文字加链接样式、并且点击这个数字还会自动拨号！默认开启<br>email：浏览器会识别邮箱并加样式，点击可以调用系统默认邮件应用给该地址发邮件，默认开启<br>adress：adress=yes就开启了点击地址直接跳转至地图的功能，默认开启</p>
-<pre><code> &amp;lt;meta content=&quot;telephone=no&quot; name=&quot;format-detection&quot; /&amp;gt;
+<pre><code>&amp;lt;meta content=&quot;telephone=no&quot; name=&quot;format-detection&quot; /&amp;gt;
 &amp;lt;meta content=&quot;telephone=no,email=no,adress=no&quot; name=&quot;format-detection&quot; /&amp;gt;
 </code></pre><p>10.x5-orientation</p>
 <p>QQ浏览器强制竖屏</p>
@@ -241,8 +240,8 @@
 &amp;lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=Edge&quot; /&amp;gt;
 </code></pre><p>14.renderer</p>
 <p>这貌似是360浏览器专用，兼容360的利器啊，，360默认是用IE7去渲染页面的，不管你的系统装了多高版本的IE,这种行为真是业界毒瘤啊。</p>
-<pre><code> &amp;lt;meta name=&quot;renderer&quot; content=&quot;webkit&quot;&amp;gt;//默认webkit内核
- &amp;lt;meta name=&quot;renderer&quot; content=&quot;ie-comp&quot;&amp;gt;//默认IE兼容模式
+<pre><code>&amp;lt;meta name=&quot;renderer&quot; content=&quot;webkit&quot;&amp;gt;//默认webkit内核
+&amp;lt;meta name=&quot;renderer&quot; content=&quot;ie-comp&quot;&amp;gt;//默认IE兼容模式
 &amp;lt;meta name=&quot;renderer&quot; content=&quot;ie-stand&quot;&amp;gt;//默认IE标准模式
 </code></pre><p>15.Cache-Control</p>
 <p>设置缓存</p>
@@ -251,47 +250,50 @@
 <p>二、常见问题解决方法：</p>
 <p>1.上下拉动滚动条时卡顿、慢</p>
 <pre><code>body {
-   -webkit-overflow-scrolling: touch;
-   overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
 }
 </code></pre><p>2.禁止复制、选中文本</p>
 <pre><code>element {
-   -webkit-user-select: none;
-   -moz-user-select: none;
-   -khtml-user-select: none;
-    user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+   user-select: none;
 }
 </code></pre><p>3.长时间按住页面出现闪退</p>
-<pre><code>  element {
--webkit-touch-callout: none;
- }
+<pre><code>element {
+  -webkit-touch-callout: none;
+}
 </code></pre><p>  iphone及ipad下输入框默认内阴影</p>
-<pre><code> element{
--webkit-appearance: none; 
-  }
+<pre><code>element{
+  -webkit-appearance: none; 
+}
 </code></pre><p>4.ios和android下触摸元素时出现半透明灰色遮罩</p>
 <pre><code>element{
--webkit-tap-highlight-color:rgba(255,255,255,0)
+  -webkit-tap-highlight-color:rgba(255,255,255,0)
 }
 </code></pre><p>设置alpha值为0就可以去除半透明灰色遮罩<br>备注：transparent的属性值在android下无效</p>
 <p>5.Retina屏的1px边框</p>
 <pre><code>element{
-border-width: thin;
+  border-width: thin;
 }
 </code></pre><p>6.旋转屏幕时，字体大小调整的问题</p>
 <pre><code>html, body, form, fieldset, p, div, h1, h2, h3, h4, h5, h6 {
--webkit-text-size-adjust:100%;
+  -webkit-text-size-adjust:100%;
 }
 </code></pre><p>7.transition闪屏</p>
-<p>  /<em>设置内嵌的元素在 3D 空间如何呈现：保留3D </em>/<br>  -webkit-transform-style: preserve-3d;<br>  /<em> 设置进行转换的元素的背面在面对用户时是否可见：隐藏 </em>/<br>  -webkit-backface-visibility:hidden;</p>
-<p>8.圆角bug</p>
+<pre><code>/*设置内嵌的元素在 3D 空间如何呈现：保留3D */
+-webkit-transform-style: preserve-3d;
+/* 设置进行转换的元素的背面在面对用户时是否可见：隐藏 */
+-webkit-backface-visibility:hidden;
+</code></pre><p>8.圆角bug</p>
 <p>某些Android手机圆角失效</p>
 <pre><code>background-clip: padding-box;  
 </code></pre><p>9.桌面图标</p>
-<pre><code> &amp;lt;link rel=&quot;apple-touch-icon&quot; href=&quot;touch-icon-iphone.png&quot; /&amp;gt;
- &amp;lt;link rel=&quot;apple-touch-icon&quot; sizes=&quot;76x76&quot; href=&quot;touch-icon-ipad.png&quot; /&amp;gt;
+<pre><code>&amp;lt;link rel=&quot;apple-touch-icon&quot; href=&quot;touch-icon-iphone.png&quot; /&amp;gt;
+&amp;lt;link rel=&quot;apple-touch-icon&quot; sizes=&quot;76x76&quot; href=&quot;touch-icon-ipad.png&quot; /&amp;gt;
 &amp;lt;link rel=&quot;apple-touch-icon&quot; sizes=&quot;120x120&quot; href=&quot;touch-icon-iphone-retina.png&quot; /&amp;gt;
- &amp;lt;link rel=&quot;apple-touch-icon&quot; sizes=&quot;152x152&quot; href=&quot;touch-icon-ipad-retina.png&quot; /&amp;gt;
+&amp;lt;link rel=&quot;apple-touch-icon&quot; sizes=&quot;152x152&quot; href=&quot;touch-icon-ipad-retina.png&quot; /&amp;gt;
 </code></pre><p>iOS下针对不同设备定义不同的桌面图标。如果不定义则以当前屏幕截图作为图标。<br>上面的写法可能大家会觉得会有默认光泽，下面这种设置方法可以去掉光泽效果，还原设计图的效果！</p>
 <pre><code>&amp;lt;link rel=&quot;apple-touch-icon-precomposed&quot; href=&quot;touch-icon-iphone.png&quot; /&amp;gt;
 </code></pre><p>图片尺寸可以设定为5757（px）或者Retina可以定为114114（px），ipad尺寸为72*72（px)</p>
@@ -369,7 +371,7 @@ textarea {
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">html,css,html5,meta</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">html5</a>
         		</li>
       		
 		</ul>
@@ -549,15 +551,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">html,css,html5,meta</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">sublime</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -565,7 +559,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">html5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">webpack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">sublime</a>
               </li>
             
             <div class="clearfix"></div>

@@ -6,19 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>webpack提取公共代码及js，css的分离操作 | 桃子的博客</title>
+  <title>Tag: html5 | 桃子的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="其实早就想和大家分享下webpack，由于最近较忙正在搞一个桌面应用，所以抽空给大家聊聊webpack的独立打包。相信点开此文章的朋友都已经接触过webpack了，所以在这咱们也不废话了，基础知识咱不讲解，这里咱们就直杀主题了，如果是没有基础的朋友建议可以先了解一下webpack的打包过程，当然我也不会完全不去管没有基础的朋友，下面我也会说一下关于webpack配置方面的说明，好了，下面咱们直接先">
-<meta name="keywords" content="webpack">
-<meta property="og:type" content="article">
-<meta property="og:title" content="webpack提取公共代码及js，css的分离操作">
-<meta property="og:url" content="http://yoursite.com/2017/06/20/webpack-fl/index.html">
+  <meta name="description" content="从未试图抱怨，一直努力改变">
+<meta property="og:type" content="website">
+<meta property="og:title" content="桃子的博客">
+<meta property="og:url" content="http://yoursite.com/tags/html5/index.html">
 <meta property="og:site_name" content="桃子的博客">
-<meta property="og:description" content="其实早就想和大家分享下webpack，由于最近较忙正在搞一个桌面应用，所以抽空给大家聊聊webpack的独立打包。相信点开此文章的朋友都已经接触过webpack了，所以在这咱们也不废话了，基础知识咱不讲解，这里咱们就直杀主题了，如果是没有基础的朋友建议可以先了解一下webpack的打包过程，当然我也不会完全不去管没有基础的朋友，下面我也会说一下关于webpack配置方面的说明，好了，下面咱们直接先">
-<meta property="og:updated_time" content="2017-06-20T13:26:56.913Z">
+<meta property="og:description" content="从未试图抱怨，一直努力改变">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="webpack提取公共代码及js，css的分离操作">
-<meta name="twitter:description" content="其实早就想和大家分享下webpack，由于最近较忙正在搞一个桌面应用，所以抽空给大家聊聊webpack的独立打包。相信点开此文章的朋友都已经接触过webpack了，所以在这咱们也不废话了，基础知识咱不讲解，这里咱们就直杀主题了，如果是没有基础的朋友建议可以先了解一下webpack的打包过程，当然我也不会完全不去管没有基础的朋友，下面我也会说一下关于webpack配置方面的说明，好了，下面咱们直接先">
+<meta name="twitter:title" content="桃子的博客">
+<meta name="twitter:description" content="从未试图抱怨，一直努力改变">
   
     <link rel="alternative" href="/atom.xml" title="桃子的博客" type="application/atom+xml">
   
@@ -158,241 +156,60 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-webpack-fl" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      webpack提取公共代码及js，css的分离操作
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/07/24/meta/" class="archive-article-date">
+  	<time datetime="2017-07-24T14:12:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-24</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/07/24/meta/">Meta标签总结及常见问题的解决方法</a>
     </h1>
   
 
-        
-        <a href="/2017/06/20/webpack-fl/" class="archive-article-date">
-  	<time datetime="2017-06-20T13:24:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>其实早就想和大家分享下webpack，由于最近较忙正在搞一个桌面应用，所以抽空给大家聊聊webpack的独立打包。<br>相信点开此文章的朋友都已经接触过webpack了，所以在这咱们也不废话了，基础知识咱不讲解，这里咱们就直杀主题了，如果是没有基础的朋友建议可以先了解一下webpack的打包过程，当然我也不会完全不去管没有基础的朋友，下面我也会说一下关于webpack配置方面的说明，好了，下面咱们直接先上代码，然后我来给各位一一剖解：</p>
-<pre><code>var webpack = require(&apos;webpack&apos;);
-var path = require(&quot;path&quot;);
-var HtmlWebpackPlugin = require(&apos;html-webpack-plugin&apos;);
-var ExtractTextPlugin = require(&apos;extract-text-webpack-plugin&apos;);
-</code></pre><a id="more"></a>
-<pre><code>module.exports = {
-    entry:{
-        main:&quot;./src/index.js&quot;,
-        vendor:[&quot;jquery&quot;]
-    },
-
-    output:{
-        filename:&quot;js/[name].[chunkhash:5].js&quot;,
-        path: path.resolve(__dirname,&quot;dist&quot;)
-    },
-
-    module:{
-        rules:[
-            {
-                test:/\.css$/,
-                loader:ExtractTextPlugin.extract({
-                  fallback: &quot;style-loader&quot;,
-                  use: &quot;css-loader&quot;,
-                  publicPath: &quot;/dist&quot;
-                }),
-                exclude: /node_modules/
-            }
-        ]
-    },
-
-    plugins:[
-        //提取公共代码插件
-        new webpack.optimize.CommonsChunkPlugin({
-            names: [&apos;vendor&apos;,&apos;manifest&apos;]
-        }),
-        new HtmlWebpackPlugin({
-            title: &apos;webpack&apos;,
-            inject:&quot;head&quot;,
-            template: &apos;index.html&apos; // 模板路径
-        }),
-        new ExtractTextPlugin(&quot;css/style.css&quot;)
-    ]
-}
-</code></pre><p>以上是我们整个配置文件代码，下面我来从上至下的给大家讲解一下其配置意思：<br>entry指的是webpack打包的入口，在配置中我们可以看到它的值是一个对象，其实入口的值有三种形式：第一种是字符串，第二种是数组，第三种是对象，对象的意思是指我们需要多个文件打包，目的是为了打包后希望我们的js不要把两个入口的代码写入到一个文件当中去，然后入口中打包的两个东西一个是我们程序的入口文件，一个是jq框架，这里vendor属性用于配置打包第三方类库，写入数组的类库名将统一打包到一个文件里面去，所以这是框架的独立打包，其目的是为了让我们的业务代码不要与框架代码给混在一起，这样不适于我们后期的程序管理。<br>下面我们先看看程序入口文件中的代码：</p>
-<pre><code>import $ from &quot;jquery&quot;;
-import &quot;./style/style.css&quot;;
-
-const setbg =()=&gt;{
-
-    $(&quot;body&quot;).html(&quot;吴佳&quot;);
-
-}
-
-setbg();
-</code></pre><p>以上是程序的入口文件代码，我们需要注意其中引入了一个css文件，下面我再把css文件内的代码给先贴出来：</p>
-<pre><code>body{
-    color:red;
-    background: blue;
-    font-size: 30px;
-}
-</code></pre><p>代码很简单，就不作讲解了，具体我等会再说为啥把这两个文件代码贴出来，现在咱们把配置文件中的代码接着往下扯，后面我们扯到的是输出，output，它指的webpack打包生成后的文件输出位置及文件名字的配置，我们可以看到它的值也是一个对象，其中filename指的是输出打包生成文件后的文件名字，path是指输出存放文件的位置。可以看到filename值也就是打包生成的文件名字是动态生成，由[name].[chunkhash:5]组成，[name]的意思是指对应于入口配置处需打包文件的键名，[chunkhash:5]指的是打包后生成的版本hash值，:5的意思是指取hash长度5位数，path属性可以看到我们把生成文件输出到了项目的根目录中的dist文件目录下面去了，然后内部创建了一个js的文件目录，其中放入的就是我们打包生成后的所有js文件。<br>这里module rules属性是一个数组，保存每一个要用到的加载器的配置，我们就在这里添加css-loader。每一个加载器，至少要配置两个选项：test和loader。test一般是一个正则表达式，用于测试每个文件的绝对路径，多数情况下，这里的正则表达式都是用于检测文件的扩展名，比如/.css$/检测文件名是不是以.css结尾，然后需要指定loader，也就是指定对通过test检测的文件应用什么加载器，exclude属性，指定要排除的文件夹，exclude的值应该是一个正则表达式，因此这里设置为/node_modules/。<br>plugins是插件配置项，值是一个数组，数组内部每一项代表一个插件的实例，在此配置中我们用到了三个插件：<br>webpack.optimize.CommonsChunkPlugin提取公共代码插件，HtmlWebpackPlugin模板插件，ExtractTextPlugin分离css插件。</p>
-<p>提取公共代码插件我们是用它来给我们项目提取js的公共代码用的，在插件配置中我们传入了一个names属性是设置需提取的公共代码部分值是一个数组，vendor代表提取入口设置的所有插件项打包生成到一个文件当中，最后会生成一个叫vendor这个键名的js文件也就是所有框架或者插件的打包文件，由于提取第三方类库时我们没有改动第三方库代码但打包时还是会生成一个新的hash值，为了解决此问题我们给插件添加一个提取属性’manifest’，manifest.js为webpack的启动文件代码，它会直接影响到hash值，用mainfest单独抽出来了，这样vendor的hash就不会变了。</p>
-<p>模板插件可以简化创建调用webpack bundles的html文件。在每次编译后，文件名会包含有hash值的bundles 特别有用。你可以让插件为您生成一个HTML文件，也可以提供您自己使用lodash模板的模板或使用您自己的装载机。<br>你可以传一个配置选项的散列到 HtmlWebpackPlugin，允许的值如下：</p>
-<pre><code>title : ,//用于生成的HTML文件的标题。
-filename : ,//用于生成的HTML文件的名称，默认是index.html。你可以在这里指定子目录（例如:assets/admin.html）
-template : ,//模板的路径。支持加载器，例如 html!./index.html。
-inject :true | ‘head’ | ‘body’ | false ,//把所有产出文件注入到给定的 template 或templateContent。当传入 true或者 ‘body’时所有javascript资源将被放置在body元素的底部，“head”则会放在head元素内。
-favicon : ,//给定的图标路径，可将其添加到输出html中。
-minify : {…} | false ,//传一个html-minifier 配置object来压缩输出。
-hash : true | false,//如果是true，会给所有包含的script和css添加一个唯一的webpack编译hash值。这对于缓存清除非常有用。
-cache : true | false ,//如果传入true（默认），只有在文件变化时才 发送（emit）文件。
-showErrors : true | false ,//如果传入true（默认），错误信息将写入html页面。
-chunks : ,//只允许你添加chunks （例如：只有单元测试块 ）
-chunksSortMode : ,//在chunk被插入到html之前，你可以控制它们的排序。允许的值 ‘none’ | ‘auto’ | ‘dependency’ | {function}默认为‘auto’.
-excludeChunks :,// 允许你跳过一些chunks（例如，不要单元测试的 chunk）.
-xhtml :,// 用于生成的HTML文件的标题。
-title : true | false,//如果是true，把link标签渲染为自闭合标签，XHTML要这么干的。默认false。 
-</code></pre><p>分离css插件主要是为了抽离css样式,防止将样式打包在js中引起页面样式加载错乱的现象;<br>该插件有三个参数意义分别如下:</p>
-<pre><code>use:,//指需要什么样的loader去编译文件,这里由于源文件是.css所以选择css-loader
-fallback:,//编译后用什么loader来提取css文件
-publicfile:,//用来覆盖项目路径,生成该css文件的文件路径
-</code></pre><p>以上是整个配置的讲解，最终webpack打包输出后在dist目录内有一个js目录一个css目录和一个index.html模板，js目录内分别有三个js文件main.hash.js，vendor.hash.js，manifest.hash.js，css目录内有一个style.css文件，它们会自动被引入到index.html 的head标签中，css文件是由打包index.js程序入口时分离出来的文件并输出到css目录当中去的。</p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">html5</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/06/20/webpack-fl/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2017/07/12/sublime-tool/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          sublime常用快捷键及插件的推荐与安装
-        
-      </div>
-    </a>
   
   
-    <a href="/2017/05/26/flex-layout/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">flex弹性盒模型12个属性解读</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
+    
 
 
           </div>
@@ -415,9 +232,9 @@ publicfile:,//用来覆盖项目路径,生成该css文件的文件路径
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",

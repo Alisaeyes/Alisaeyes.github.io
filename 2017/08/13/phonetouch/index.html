@@ -16,7 +16,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/08/13/phonetouch/index.html">
 <meta property="og:site_name" content="桃子的博客">
 <meta property="og:description" content="touchstart：触摸开始的时候触发touchmove：手指在屏幕上滑动的时候触发touchend：触摸结束的时候触发 #而每个触摸事件都包括了三个触摸列表，每个列表里包含了对应的一系列触摸点（用来实现多点触控）：touches：当前位于屏幕上的所有手指的列表。targetTouches：位于当前DOM元素上手指的列表。changedTouches：涉及当前事件手指的列表。">
-<meta property="og:updated_time" content="2017-08-13T09:53:40.929Z">
+<meta property="og:updated_time" content="2017-08-13T10:12:55.160Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="手机端HTML5触屏事件(touch事件)详解">
 <meta name="twitter:description" content="touchstart：触摸开始的时候触发touchmove：手指在屏幕上滑动的时候触发touchend：触摸结束的时候触发 #而每个触摸事件都包括了三个触摸列表，每个列表里包含了对应的一系列触摸点（用来实现多点触控）：touches：当前位于屏幕上的所有手指的列表。targetTouches：位于当前DOM元素上手指的列表。changedTouches：涉及当前事件手指的列表。">
@@ -181,7 +181,7 @@
       
         <p>touchstart：触摸开始的时候触发<br>touchmove：手指在屏幕上滑动的时候触发<br>touchend：触摸结束的时候触发</p>
 <p>#而每个触摸事件都包括了三个触摸列表，每个列表里包含了对应的一系列触摸点（用来实现多点触控）：<br>touches：当前位于屏幕上的所有手指的列表。<br>targetTouches：位于当前DOM元素上手指的列表。<br>changedTouches：涉及当前事件手指的列表。<br><a id="more"></a></p>
-<p>#每个触摸点由包含了如下触摸信息（常用）：<br>identifier：一个数值，唯一标识触摸会话（touch session）中的当前手指。一般为从0开始的流水号（android4.1，uc）<br>target：DOM元素，是动作所针对的目标。<br>pageX/pageX/clientX/clientY/screenX/screenY：一个数值，动作在屏幕上发生的位置（page包含滚动距离,client不包含滚动距离，screen则以屏幕为基准）。　<br>radiusX/radiusY/rotationAngle：画出大约相当于手指形状的椭圆形，分别为椭圆形的两个半径和旋转角度。初步测试浏览器不支持，好在功能不常用，欢迎大家反馈。</p>
+<p>#每个触摸点由包含了如下触摸信息（常用）：<br>identifier：一个数值，唯一标识触摸会话（touch session）中的当前手指。一般为从0开始的流水号（android4.1，uc）<br>target：DOM元素，是动作所针对的目标。<br>pageX/pageY/clientX/clientY/screenX/screenY：一个数值，动作在屏幕上发生的位置（page包含滚动距离,client不包含滚动距离，screen则以屏幕为基准）。　<br>radiusX/radiusY/rotationAngle：画出大约相当于手指形状的椭圆形，分别为椭圆形的两个半径和旋转角度。初步测试浏览器不支持，好在功能不常用，欢迎大家反馈。</p>
 <pre><code>var obj = document.getElementByIdx_x(&apos;id&apos;);
 obj.addEventListener(&apos;touchmove&apos;, function(event) {
 // 如果这个元素的位置内只有一个手指的话
@@ -416,15 +416,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">sublime</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">webpack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Javascript</a>
               </li>
             
             <div class="clearfix"></div>

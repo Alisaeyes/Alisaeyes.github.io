@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Meta标签总结及常见问题的解决方法 | 桃子的博客</title>
+  <title>手机端HTML5触屏事件(touch事件)详解 | 桃子的博客</title>
   <meta name="keywords" content="小桃子,桃子博客,HTML5技术广场,JavaScript技术栈,前端三大巨头,前端自动化">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="自古以来都是能人掌天下，在技场上也是同样的道理。一个优秀的开发者，在开发一个项目关注的不止只是功能的实现或视图的展现，想必在项目开发中大家都会组织功能封装，减少代码重写，减小请求负重，提升加载速度等。在我看来，这些都只是家常便饭，因为我一直认为，一名优秀的开发者，不只是单方面的只关注于技术层次，我们更应该学会总结，总结每次项目开发中所遇到的种种问题，碰到的各种奇葩事情，这样也是在更快的提升自己的能">
+  <meta name="description" content="touchstart：触摸开始的时候触发touchmove：手指在屏幕上滑动的时候触发touchend：触摸结束的时候触发 #而每个触摸事件都包括了三个触摸列表，每个列表里包含了对应的一系列触摸点（用来实现多点触控）：touches：当前位于屏幕上的所有手指的列表。targetTouches：位于当前DOM元素上手指的列表。changedTouches：涉及当前事件手指的列表。">
 <meta name="keywords" content="html5">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Meta标签总结及常见问题的解决方法">
-<meta property="og:url" content="http://yoursite.com/2017/07/24/meta/index.html">
+<meta property="og:title" content="手机端HTML5触屏事件(touch事件)详解">
+<meta property="og:url" content="http://yoursite.com/2017/08/13/phonetouch/index.html">
 <meta property="og:site_name" content="桃子的博客">
-<meta property="og:description" content="自古以来都是能人掌天下，在技场上也是同样的道理。一个优秀的开发者，在开发一个项目关注的不止只是功能的实现或视图的展现，想必在项目开发中大家都会组织功能封装，减少代码重写，减小请求负重，提升加载速度等。在我看来，这些都只是家常便饭，因为我一直认为，一名优秀的开发者，不只是单方面的只关注于技术层次，我们更应该学会总结，总结每次项目开发中所遇到的种种问题，碰到的各种奇葩事情，这样也是在更快的提升自己的能">
-<meta property="og:updated_time" content="2017-07-24T15:13:01.133Z">
+<meta property="og:description" content="touchstart：触摸开始的时候触发touchmove：手指在屏幕上滑动的时候触发touchend：触摸结束的时候触发 #而每个触摸事件都包括了三个触摸列表，每个列表里包含了对应的一系列触摸点（用来实现多点触控）：touches：当前位于屏幕上的所有手指的列表。targetTouches：位于当前DOM元素上手指的列表。changedTouches：涉及当前事件手指的列表。">
+<meta property="og:updated_time" content="2017-08-13T09:53:40.929Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Meta标签总结及常见问题的解决方法">
-<meta name="twitter:description" content="自古以来都是能人掌天下，在技场上也是同样的道理。一个优秀的开发者，在开发一个项目关注的不止只是功能的实现或视图的展现，想必在项目开发中大家都会组织功能封装，减少代码重写，减小请求负重，提升加载速度等。在我看来，这些都只是家常便饭，因为我一直认为，一名优秀的开发者，不只是单方面的只关注于技术层次，我们更应该学会总结，总结每次项目开发中所遇到的种种问题，碰到的各种奇葩事情，这样也是在更快的提升自己的能">
+<meta name="twitter:title" content="手机端HTML5触屏事件(touch事件)详解">
+<meta name="twitter:description" content="touchstart：触摸开始的时候触发touchmove：手指在屏幕上滑动的时候触发touchend：触摸结束的时候触发 #而每个触摸事件都包括了三个触摸列表，每个列表里包含了对应的一系列触摸点（用来实现多点触控）：touches：当前位于屏幕上的所有手指的列表。targetTouches：位于当前DOM元素上手指的列表。changedTouches：涉及当前事件手指的列表。">
   
     <link rel="alternative" href="/atom.xml" title="桃子的博客" type="application/atom+xml">
   
@@ -159,187 +159,42 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-meta" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-phonetouch" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Meta标签总结及常见问题的解决方法
+      手机端HTML5触屏事件(touch事件)详解
     </h1>
   
 
         
-        <a href="/2017/07/24/meta/" class="archive-article-date">
-  	<time datetime="2017-07-24T14:12:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-24</time>
+        <a href="/2017/08/13/phonetouch/" class="archive-article-date">
+  	<time datetime="2017-08-13T09:50:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>自古以来都是能人掌天下，在技场上也是同样的道理。<br>一个优秀的开发者，在开发一个项目关注的不止只是功能的实现或视图的展现，想必在项目开发中大家都会组织功能封装，减少代码重写，减小请求负重，提升加载速度等。在我看来，这些都只是家常便饭，因为我一直认为，一名优秀的开发者，不只是单方面的只关注于技术层次，我们更应该学会总结，总结每次项目开发中所遇到的种种问题，碰到的各种奇葩事情，这样也是在更快的提升自己的能力及学问，下次开发就不会再重复出现相同问题，节省不必要浪费的时间，就能更快的交出自己的答案。如果你觉得我说的是那么回事，行，我的目的达到了 …</p>
-<p>好，上面扯了一段白话，下面咱们进入主题，讲讲我对于这些基础的总结吧！</p>
-<a id="more"></a>
-<p>一、meta标签的总结</p>
-<p>1.keywords,description(经常用到的两个)</p>
-<p>页面的关键字和描述，是写给搜索引擎看的，关键字可以有多个用 ‘,’号隔开</p>
-<pre><code>&lt;meta name=&quot;keywords&quot; content=&quot;HTML,CSS,JAVASCRIPT,PHP&quot;&gt;
-&lt;meta name=&quot;description&quot; content=&quot;html meta标签大全,整理一下加强记忆&quot;&gt;
-</code></pre><p>2.Content-Type</p>
-<p>告诉浏览器当前访问的资源类型</p>
-<pre><code>&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
-&lt;--告诉浏览器当前访问的资源类型 并声明编码--&gt;
-</code></pre><p>3.viewport</p>
-<p>随大小设备自动适配</p>
-<pre><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
-&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=0.5, minimum-scale=1.0, user-scalable=no&quot;/&gt;
-</code></pre><p>说明：</p>
-<p>什么是viewport？</p>
-<p>简单来讲，viewport就是浏览器上，用来显示网页的那一部分区域了，也就是说，浏览器的实际宽度，是和我们手机的宽度不一样的，无论你的手机宽度是320px，还是640px，在手机浏览器内部的宽度，始终会是浏览器本身的viewport。如今的浏览器，都会给自己的本身提供一个viewport的默认值，可能是980px，或者是其他值。就以手机来说吧，目前，新版本的手机浏览器，绝大部分是以980px作为默认的viewport值的。我这里对新版本的不同平台下的浏览器做了测试，经过测试，iphone下的默认viewport为980px，安卓下的浏览器，目前主流的最新浏览器（比如chrome，还有很多国产的像qq，uc）的viewport也是980px了。</p>
-<p>viewport是用来干什么的？</p>
-<p>viewport的默认值，一般来说是大于手机屏幕的。这样就可以做到当我们在浏览桌面端网页的时候，可以让桌面端端网页正常显示（我们普通页面设计的时候，一般页面的主区域是以960px来做的，所以980px这个值，可以做到桌面端网页的正常显示）。但是，其实我们手机的屏幕宽度是没有960px的，因此浏览器会出现横向滚动条。同时，即使是基于980的viewport，我们在移动端浏览我们的桌面页面的体验其实也并不好，所以，一般的，我们会专门给浏览器设计一个移动端的页面。</p>
-<p>viewport默认有6个属性，分别如下：</p>
-<p>width: 设置viewport的宽度（即之前所提及到的，浏览器的宽度详），这里可以为一个整数，又或者是字符串”width-device”</p>
-<p>initial-scale: 页面初始的缩放值，为数字，可以是小数</p>
-<p>minimum-scale: 允许用户的最小缩放值，为数字，可以是小数</p>
-<p>maximum-scale: 允许用户的最大缩放值，为数字，可以是小数</p>
-<p>user-scalable: 是否允许用户进行缩放，’no’为不允许，’yes’为允许</p>
-<p>4.apple-mobile-web-app-capable</p>
-<p>设置Web应用是否以全屏模式运行。</p>
-<pre><code>&lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot;/&gt;
-</code></pre><p>说明：</p>
-<p>如果content设置为yes，Web应用会以全屏模式运行，反之，则不会。content的默认值是no，表示正常显示。你可以通过只读属性window.navigator.standalone来确定网页是否以全屏模式显示。</p>
-<p>5.sharecontent</p>
-<p>微信分享页面设置</p>
-<pre><code>&lt;meta name=&quot;sharecontent&quot; data-msg-img=&quot;缩略图地址&quot; data-msg-title=&quot;标题&quot; data-msg-content=&quot;简介&quot; data-msg-callBack=&quot;&quot; data-line-img=&quot;缩略图地址&quot; data-line-title=&quot;标题&quot; data-line-callBack=&quot;&quot;/&gt;  
-</code></pre><p>6.refresh</p>
-<p>重定向（以下示例5秒后会跳转到：<a href="http://www.taozit.com）" target="_blank" rel="external">http://www.taozit.com）</a></p>
-<pre><code>&lt;meta http-equiv=&quot;refresh&quot; content=&quot;5;url=&quot;http://www.taozit.com&quot; /&gt;
-</code></pre><p>7.full-screen</p>
-<p>全屏显示网页(部分移动端浏览器的专有属性)</p>
-<pre><code>&lt;meta name=&quot;full-screen&quot; content=&quot;yes&quot;/&gt;
-</code></pre><p>8.browsermode</p>
-<p>浏览器模式-强制坚屏显示(部分移动端浏览器的专有属性),</p>
-<pre><code>&lt;meta name=&quot;browsermode&quot; content=&quot;application&quot;/&gt;
-</code></pre><p>9.format-detection</p>
-<p>数据格式验证渲染：<br>telephone：而iPhone会自动把你这个文字加链接样式、并且点击这个数字还会自动拨号！默认开启<br>email：浏览器会识别邮箱并加样式，点击可以调用系统默认邮件应用给该地址发邮件，默认开启<br>adress：adress=yes就开启了点击地址直接跳转至地图的功能，默认开启</p>
-<pre><code>&lt;meta content=&quot;telephone=no&quot; name=&quot;format-detection&quot; /&gt;
-&lt;meta content=&quot;telephone=no,email=no,adress=no&quot; name=&quot;format-detection&quot; /&gt;
-</code></pre><p>10.x5-orientation</p>
-<p>QQ浏览器强制竖屏</p>
-<pre><code>&lt;meta name=&quot;x5-orientation&quot; content=&quot;portrait&quot;/&gt;
-</code></pre><p>11.x5-fullscreen</p>
-<p>QQ浏览器强制全屏</p>
-<pre><code>&lt;meta name=&quot;x5-fullscreen&quot; content=&quot;true&quot;/&gt;
-</code></pre><p>12.x5-page-mode</p>
-<p>QQ浏览器应用模式</p>
-<pre><code>&lt;meta name=&quot;x5-page-mode&quot; content=&quot;app&quot;/&gt;
-</code></pre><p>13.X-UA-Compatible</p>
-<p>IE的兼容模式:以IE的哪个版本去渲染页面（IE=8：以IE8的模式去渲染页面，IE=Edge:以最新版本的IE去渲染页面，当然这个最新指的是你系统装的最高版本的IE）</p>
-<pre><code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=8&quot; /&gt;
-&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=Edge&quot; /&gt;
-</code></pre><p>14.renderer</p>
-<p>这貌似是360浏览器专用，兼容360的利器啊，，360默认是用IE7去渲染页面的，不管你的系统装了多高版本的IE,这种行为真是业界毒瘤啊。</p>
-<pre><code>&lt;meta name=&quot;renderer&quot; content=&quot;webkit&quot;&gt;//默认webkit内核
-&lt;meta name=&quot;renderer&quot; content=&quot;ie-comp&quot;&gt;//默认IE兼容模式
-&lt;meta name=&quot;renderer&quot; content=&quot;ie-stand&quot;&gt;//默认IE标准模式
-</code></pre><p>15.Cache-Control</p>
-<p>设置缓存</p>
-<pre><code>&lt;meta http-equiv=&quot;Cache-Control&quot; content=&quot;no-cache&quot; /&gt;
-</code></pre><p>说明：<br>手机页面通常在第一次加载后会进行缓存，然后每次刷新会使用缓存而不是去重新向服务器发送请求。如果不希望使用缓存可以设置no-cache。</p>
-<p>二、常见问题解决方法：</p>
-<p>1.上下拉动滚动条时卡顿、慢</p>
-<pre><code>body {
-  -webkit-overflow-scrolling: touch;
-  overflow-scrolling: touch;
+        <p>touchstart：触摸开始的时候触发<br>touchmove：手指在屏幕上滑动的时候触发<br>touchend：触摸结束的时候触发</p>
+<p>#而每个触摸事件都包括了三个触摸列表，每个列表里包含了对应的一系列触摸点（用来实现多点触控）：<br>touches：当前位于屏幕上的所有手指的列表。<br>targetTouches：位于当前DOM元素上手指的列表。<br>changedTouches：涉及当前事件手指的列表。<br><a id="more"></a></p>
+<p>#每个触摸点由包含了如下触摸信息（常用）：<br>identifier：一个数值，唯一标识触摸会话（touch session）中的当前手指。一般为从0开始的流水号（android4.1，uc）<br>target：DOM元素，是动作所针对的目标。<br>pageX/pageX/clientX/clientY/screenX/screenY：一个数值，动作在屏幕上发生的位置（page包含滚动距离,client不包含滚动距离，screen则以屏幕为基准）。　<br>radiusX/radiusY/rotationAngle：画出大约相当于手指形状的椭圆形，分别为椭圆形的两个半径和旋转角度。初步测试浏览器不支持，好在功能不常用，欢迎大家反馈。</p>
+<pre><code>var obj = document.getElementByIdx_x(&apos;id&apos;);
+obj.addEventListener(&apos;touchmove&apos;, function(event) {
+// 如果这个元素的位置内只有一个手指的话
+if (event.targetTouches.length == 1) {
+　　　　 event.preventDefault();// 阻止浏览器默认事件，重要 
+var touch = event.targetTouches[0];
+// 把元素放在手指所在的位置
+obj.style.left = touch.pageX-50 + &apos;px&apos;;
+obj.style.top = touch.pageY-50 + &apos;px&apos;;
 }
-</code></pre><p>2.禁止复制、选中文本</p>
-<pre><code>element {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -khtml-user-select: none;
-   user-select: none;
-}
-</code></pre><p>3.长时间按住页面出现闪退</p>
-<pre><code>element {
-  -webkit-touch-callout: none;
-}
-</code></pre><p>  iphone及ipad下输入框默认内阴影</p>
-<pre><code>element{
-  -webkit-appearance: none; 
-}
-</code></pre><p>4.ios和android下触摸元素时出现半透明灰色遮罩</p>
-<pre><code>element{
-  -webkit-tap-highlight-color:rgba(255,255,255,0)
-}
-</code></pre><p>设置alpha值为0就可以去除半透明灰色遮罩<br>备注：transparent的属性值在android下无效</p>
-<p>5.Retina屏的1px边框</p>
-<pre><code>element{
-  border-width: thin;
-}
-</code></pre><p>6.旋转屏幕时，字体大小调整的问题</p>
-<pre><code>html, body, form, fieldset, p, div, h1, h2, h3, h4, h5, h6 {
-  -webkit-text-size-adjust:100%;
-}
-</code></pre><p>7.transition闪屏</p>
-<pre><code>/*设置内嵌的元素在 3D 空间如何呈现：保留3D */
--webkit-transform-style: preserve-3d;
-/* 设置进行转换的元素的背面在面对用户时是否可见：隐藏 */
--webkit-backface-visibility:hidden;
-</code></pre><p>8.圆角bug</p>
-<p>某些Android手机圆角失效</p>
-<pre><code>background-clip: padding-box;  
-</code></pre><p>9.桌面图标</p>
-<pre><code>&lt;link rel=&quot;apple-touch-icon&quot; href=&quot;touch-icon-iphone.png&quot; /&gt;
-&lt;link rel=&quot;apple-touch-icon&quot; sizes=&quot;76x76&quot; href=&quot;touch-icon-ipad.png&quot; /&gt;
-&lt;link rel=&quot;apple-touch-icon&quot; sizes=&quot;120x120&quot; href=&quot;touch-icon-iphone-retina.png&quot; /&gt;
-&lt;link rel=&quot;apple-touch-icon&quot; sizes=&quot;152x152&quot; href=&quot;touch-icon-ipad-retina.png&quot; /&gt;
-</code></pre><p>iOS下针对不同设备定义不同的桌面图标。如果不定义则以当前屏幕截图作为图标。<br>上面的写法可能大家会觉得会有默认光泽，下面这种设置方法可以去掉光泽效果，还原设计图的效果！</p>
-<pre><code>&lt;link rel=&quot;apple-touch-icon-precomposed&quot; href=&quot;touch-icon-iphone.png&quot; /&gt;
-</code></pre><p>图片尺寸可以设定为5757（px）或者Retina可以定为114114（px），ipad尺寸为72*72（px)</p>
-<p>10.启动画面</p>
-<pre><code>&lt;link rel=&quot;apple-touch-startup-image&quot; href=&quot;start.png&quot;/&gt;
-</code></pre><p>11.iOS下页面启动加载时显示的画面图片，避免加载时的白屏。</p>
-<p>可以通过madia来指定不同的大小：</p>
-<pre><code>&lt;!--iPhone--&gt;
-&lt;link href=&quot;apple-touch-startup-image-320x460.png&quot; media=&quot;(device-width: 320px)&quot; rel=&quot;apple-touch-startup-image&quot; /&gt;
+}, false);
+</code></pre><p>注意：此功能只能在移动设备或模拟移动设备查看效果</p>
 
-&lt;!-- iPhone Retina --&gt;
-&lt;link href=&quot;apple-touch-startup-image-640x920.png&quot; media=&quot;(device-width: 320px) and (-webkit-device-pixel-ratio: 2)&quot; rel=&quot;apple-touch-startup-image&quot; /&gt;
-
-&lt;!-- iPhone 5 --&gt;
-&lt;link rel=&quot;apple-touch-startup-image&quot; media=&quot;(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)&quot; href=&quot;apple-touch-startup-image-640x1096.png&quot;&gt;
-
-&lt;!-- iPad portrait --&gt;
-&lt;link href=&quot;apple-touch-startup-image-768x1004.png&quot; media=&quot;(device-width: 768px) and (orientation: portrait)&quot; rel=&quot;apple-touch-startup-image&quot; /&gt;
-
-&lt;!-- iPad landscape --&gt;
-&lt;link href=&quot;apple-touch-startup-image-748x1024.png&quot; media=&quot;(device-width: 768px) and (orientation: landscape)&quot; rel=&quot;apple-touch-startup-image&quot; /&gt;
-
-&lt;!-- iPad Retina portrait --&gt;
-&lt;link href=&quot;apple-touch-startup-image-1536x2008.png&quot; media=&quot;(device-width: 1536px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)&quot; rel=&quot;apple-touch-startup-image&quot; /&gt;
-
-&lt;!-- iPad Retina landscape --&gt;
-&lt;link href=&quot;apple-touch-startup-image-1496x2048.png&quot;media=&quot;(device-width: 1536px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)&quot;rel=&quot;apple-touch-startup-image&quot; /&gt;
-</code></pre><p>12.ios 设置input 按钮样式会被默认样式覆盖</p>
-<pre><code>input,
-textarea {
-  border: 0; 
-  -webkit-appearance: none; 
-}
-</code></pre><p>设置默认样式为none</p>
-<p>13.IOS键盘字母输入，默认首字母大写</p>
-<p>解决方案，设置如下属性：</p>
-<pre><code>&lt;input type=&quot;text&quot; autocapitalize=&quot;off&quot; /&gt;
-</code></pre><p>14.select 下拉选择设置右对齐</p>
-<pre><code>select option {
-    direction: rtl;
-}
-</code></pre><p>15.消除IE10里面的那个叉号</p>
-<pre><code>input:-ms-clear{display:none;}
-</code></pre>
       
 
       
@@ -429,7 +284,7 @@ textarea {
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/24/meta/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/08/13/phonetouch/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -443,18 +298,9 @@ textarea {
   
 <nav id="article-nav">
   
-    <a href="/2017/08/13/phonetouch/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          手机端HTML5触屏事件(touch事件)详解
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/07/12/sublime-tool/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">sublime常用快捷键及插件的推荐与安装</div>
+    <a href="/2017/07/24/meta/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Meta标签总结及常见问题的解决方法</div>
       <i class="icon-circle-right"></i>
     </a>
   

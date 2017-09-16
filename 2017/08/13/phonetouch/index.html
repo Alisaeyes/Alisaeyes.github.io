@@ -16,7 +16,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/08/13/phonetouch/index.html">
 <meta property="og:site_name" content="桃子的博客">
 <meta property="og:description" content="touchstart：触摸开始的时候触发touchmove：手指在屏幕上滑动的时候触发touchend：触摸结束的时候触发 #而每个触摸事件都包括了三个触摸列表，每个列表里包含了对应的一系列触摸点（用来实现多点触控）：touches：当前位于屏幕上的所有手指的列表。targetTouches：位于当前DOM元素上手指的列表。changedTouches：涉及当前事件手指的列表。">
-<meta property="og:updated_time" content="2017-08-13T10:12:55.160Z">
+<meta property="og:updated_time" content="2017-08-13T10:12:55.161Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="手机端HTML5触屏事件(touch事件)详解">
 <meta name="twitter:description" content="touchstart：触摸开始的时候触发touchmove：手指在屏幕上滑动的时候触发touchend：触摸结束的时候触发 #而每个触摸事件都包括了三个触摸列表，每个列表里包含了对应的一系列触摸点（用来实现多点触控）：touches：当前位于屏幕上的所有手指的列表。targetTouches：位于当前DOM元素上手指的列表。changedTouches：涉及当前事件手指的列表。">
@@ -298,6 +298,15 @@ obj.style.top = touch.pageY-50 + &apos;px&apos;;
   
 <nav id="article-nav">
   
+    <a href="/2017/09/16/bind/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          JS事件重复绑定及触发多次的解决方法
+        
+      </div>
+    </a>
+  
   
     <a href="/2017/07/24/meta/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">Meta标签总结及常见问题的解决方法</div>
@@ -406,6 +415,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">html5</a>

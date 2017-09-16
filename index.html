@@ -159,6 +159,160 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-bind" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/16/bind/">JS事件重复绑定及触发多次的解决方法</a>
+    </h1>
+  
+
+        
+        <a href="/2017/09/16/bind/" class="archive-article-date">
+  	<time datetime="2017-09-16T05:59:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近在一个项目开发中遇到事件被重复绑定，如果处理不好就会出现同一事件触发多次的问题。今天我抽出了一点时间把这个问题抛出来给大家说一下原因及解决方法。</p>
+<p>在这里我们就废话不多说了，我直接上一个简单的例子：页面上有一个按钮。当点击按钮时创建一个类名为test-btn的button代码插入类名为area的div中。接着点击该button，console.log一段文本。如果下代码</p>
+<pre><code>&lt;head&gt;
+    &lt;style&gt;
+        #tableBox{
+            width:100px;
+            height:30px;
+            background:red;
+            border:1px solid red;
+            text-align:center;
+            line-height:30px;
+            border-radius:5px;
+        }
+        .area{
+            width:100px;
+            height:100px;
+            margin-top:40px;
+            border:2px;
+            border:1px solid #000;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div id=&quot;tableBox&quot; class=&quot;add&quot;&gt;按钮&lt;/div&gt;
+    &lt;div class=&quot;area&quot;&gt;&lt;/div&gt;
+
+    &lt;script&gt;
+        $(function(){
+            $(&quot;.add&quot;).on(&apos;click&apos;,function(eve){
+              $(&quot;.area&quot;).append(&quot;&lt;button class=&apos;test-btn&apos;&gt;test button&lt;/button&gt;&quot;);      
+              $(&quot;.area&quot;).on(&apos;click&apos;,&apos;.test-btn&apos;,function(event){
+                console.log(&quot;test button .....&quot;);   
+
+              });
+            });
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+</code></pre><p>运行代码结果是：当第一次点击按钮时，成功创建了一个button，再点击这个button执行打印出”test button…”，此时看着好像一切都是那么正常，没什么问题，可是当接着再点击第二次按钮时，此时创建出来第二个button时，再点击刚才第一次创建出来的button，打印出来了3次结果，也就是说点击一次，执行了二次代码。以此类推… 当第三次点击时，就执行了三次代码。貌似这个简单的例子就能很清楚的说明，事件被重复绑定了，好咱们先不着急着找解决方法，我们先来找找原因的所在，再来对症下药。</p>
+<p>我们分析分析上面那段代码像这么写有什么问题？为什么事件会多次执行？<br>可以看出第二次事件绑定和第一次的事件绑定都注册到了同一个按钮身上，只要不消毁就会累计执行。<br>这就是根本原因所在。可能有的人此时想到是不是因为事件冒泡的原因，那我们阻止完了事件冒泡结果是什么样呢？下面咱们就再来一例，基于上面的js代码稍作修改后是这样的：</p>
+<pre><code>&lt;script&gt;
+    $(function(){
+        $(&quot;.add&quot;).on(&apos;click&apos;,function(eve){
+          $(&quot;.area&quot;).append(&quot;&lt;button class=&apos;test-btn&apos;&gt;test button&lt;/button&gt;&quot;);      
+          $(&quot;.area&quot;).on(&apos;click&apos;,&apos;.test-btn&apos;,function(event){
+            event.stopPropagation();
+            console.log(&quot;test button .....&quot;);     
+
+          });
+        });
+    });
+&lt;/script&gt;
+</code></pre><p>事实会告诉你结果是一样的，这个跟事件冒泡没有任何的关系，其实我们可以看看原因是不是在绑定时才会出现多次执行呢？那我们来试下不用on来进行事件绑定，看看执行结果是什么，这里我们再次修改代码如下：</p>
+<pre><code>&lt;script&gt;
+    $(function(){
+        $(&quot;.add&quot;).click(function(eve){
+          $(&quot;.area&quot;).append(&quot;&lt;button class=&apos;test-btn&apos;&gt;test button&lt;/button&gt;&quot;);      
+          $(&quot;.test-btn&quot;).click(function(){
+            console.log(&quot;test button .....&quot;);
+          });
+        });
+    });    
+&lt;/script&gt;
+</code></pre><p>其实结果依然一样，在事件执行的时候会执行该元素上重复绑定的所有事件。那这个问题我们该如何解决呢？好了，这里我也不卖关子了，下面我来给大家说说解决方法，代码如下：</p>
+<p>第一种解决方法：绑定之前先解绑（代码再次修改如下）</p>
+<pre><code>&lt;script&gt;
+    $(function(){
+        $(&quot;.add&quot;).on(&apos;click&apos;,function(eve){
+          $(&quot;.area&quot;).append(&quot;&lt;button class=&apos;test-btn&apos;&gt;test button&lt;/button&gt;&quot;);
+         //解除
+          $(&quot;.area&quot;).off(&quot;click&quot;);
+         //再绑定
+          $(&quot;.area&quot;).on(&apos;click&apos;,&apos;.test-btn&apos;,function(event){
+
+            console.log(&quot;test button .....&quot;);
+            event.stopPropagation();
+
+          });
+        });
+    });
+&lt;/script&gt;
+</code></pre><p>第二种解决方法：分开写</p>
+<pre><code>&lt;script&gt;
+    $(function(){
+        $(&quot;.add&quot;).on(&apos;click&apos;,function(eve){
+          $(&quot;.area&quot;).append(&quot;&lt;button class=&apos;test-btn&apos;&gt;test button&lt;/button&gt;&quot;);
+
+        });
+         $(&quot;.area&quot;).on(&apos;click&apos;,&apos;.test-btn&apos;,function(){
+            console.log(&quot;test button .....&quot;);
+
+          });
+    });
+&lt;/script&gt;
+</code></pre><p>好了上面只是一个小例子，用来助于大家更容易的理解病因，如果还有朋友不理解，可以试着跑跑上面代码，相信会让你的人生充满记忆 ~</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/16/bind/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-phonetouch" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -640,6 +794,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">html5</a>

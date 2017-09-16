@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017/8 | 桃子的博客</title>
+  <title>JS事件重复绑定及触发多次的解决方法 | 桃子的博客</title>
   <meta name="keywords" content="小桃子,桃子博客,HTML5技术广场,JavaScript技术栈,前端三大巨头,前端自动化">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="从未试图抱怨，一直努力改变">
-<meta property="og:type" content="website">
-<meta property="og:title" content="桃子的博客">
-<meta property="og:url" content="http://yoursite.com/archives/2017/08/index.html">
+  <meta name="description" content="最近在一个项目开发中遇到事件被重复绑定，如果处理不好就会出现同一事件触发多次的问题。今天我抽出了一点时间把这个问题抛出来给大家说一下原因及解决方法。 在这里我们就废话不多说了，我直接上一个简单的例子：页面上有一个按钮。当点击按钮时创建一个类名为test-btn的button代码插入类名为area的div中。接着点击该button，console.log一段文本。如果下代码 &amp;lt;head&amp;gt;">
+<meta name="keywords" content="javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS事件重复绑定及触发多次的解决方法">
+<meta property="og:url" content="http://yoursite.com/2017/09/16/bind/index.html">
 <meta property="og:site_name" content="桃子的博客">
-<meta property="og:description" content="从未试图抱怨，一直努力改变">
+<meta property="og:description" content="最近在一个项目开发中遇到事件被重复绑定，如果处理不好就会出现同一事件触发多次的问题。今天我抽出了一点时间把这个问题抛出来给大家说一下原因及解决方法。 在这里我们就废话不多说了，我直接上一个简单的例子：页面上有一个按钮。当点击按钮时创建一个类名为test-btn的button代码插入类名为area的div中。接着点击该button，console.log一段文本。如果下代码 &amp;lt;head&amp;gt;">
+<meta property="og:updated_time" content="2017-09-16T06:09:00.945Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="桃子的博客">
-<meta name="twitter:description" content="从未试图抱怨，一直努力改变">
+<meta name="twitter:title" content="JS事件重复绑定及触发多次的解决方法">
+<meta name="twitter:description" content="最近在一个项目开发中遇到事件被重复绑定，如果处理不好就会出现同一事件触发多次的问题。今天我抽出了一点时间把这个问题抛出来给大家说一下原因及解决方法。 在这里我们就废话不多说了，我直接上一个简单的例子：页面上有一个按钮。当点击按钮时创建一个类名为test-btn的button代码插入类名为area的div中。接着点击该button，console.log一段文本。如果下代码 &amp;lt;head&amp;gt;">
   
     <link rel="alternative" href="/atom.xml" title="桃子的博客" type="application/atom+xml">
   
@@ -157,60 +159,245 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-bind" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/13/phonetouch/" class="archive-article-date">
-  	<time datetime="2017-08-13T09:50:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-13</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/13/phonetouch/">手机端HTML5触屏事件(touch事件)详解</a>
+    <h1 class="article-title" itemprop="name">
+      JS事件重复绑定及触发多次的解决方法
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/09/16/bind/" class="archive-article-date">
+  	<time datetime="2017-09-16T05:59:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近在一个项目开发中遇到事件被重复绑定，如果处理不好就会出现同一事件触发多次的问题。今天我抽出了一点时间把这个问题抛出来给大家说一下原因及解决方法。</p>
+<p>在这里我们就废话不多说了，我直接上一个简单的例子：页面上有一个按钮。当点击按钮时创建一个类名为test-btn的button代码插入类名为area的div中。接着点击该button，console.log一段文本。如果下代码</p>
+<pre><code>&lt;head&gt;
+    &lt;style&gt;
+        #tableBox{
+            width:100px;
+            height:30px;
+            background:red;
+            border:1px solid red;
+            text-align:center;
+            line-height:30px;
+            border-radius:5px;
+        }
+        .area{
+            width:100px;
+            height:100px;
+            margin-top:40px;
+            border:2px;
+            border:1px solid #000;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div id=&quot;tableBox&quot; class=&quot;add&quot;&gt;按钮&lt;/div&gt;
+    &lt;div class=&quot;area&quot;&gt;&lt;/div&gt;
+
+    &lt;script&gt;
+        $(function(){
+            $(&quot;.add&quot;).on(&apos;click&apos;,function(eve){
+              $(&quot;.area&quot;).append(&quot;&lt;button class=&apos;test-btn&apos;&gt;test button&lt;/button&gt;&quot;);      
+              $(&quot;.area&quot;).on(&apos;click&apos;,&apos;.test-btn&apos;,function(event){
+                console.log(&quot;test button .....&quot;);   
+
+              });
+            });
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+</code></pre><p>运行代码结果是：当第一次点击按钮时，成功创建了一个button，再点击这个button执行打印出”test button…”，此时看着好像一切都是那么正常，没什么问题，可是当接着再点击第二次按钮时，此时创建出来第二个button时，再点击刚才第一次创建出来的button，打印出来了3次结果，也就是说点击一次，执行了二次代码。以此类推… 当第三次点击时，就执行了三次代码。貌似这个简单的例子就能很清楚的说明，事件被重复绑定了，好咱们先不着急着找解决方法，我们先来找找原因的所在，再来对症下药。</p>
+<p>我们分析分析上面那段代码像这么写有什么问题？为什么事件会多次执行？<br>可以看出第二次事件绑定和第一次的事件绑定都注册到了同一个按钮身上，只要不消毁就会累计执行。<br>这就是根本原因所在。可能有的人此时想到是不是因为事件冒泡的原因，那我们阻止完了事件冒泡结果是什么样呢？下面咱们就再来一例，基于上面的js代码稍作修改后是这样的：</p>
+<pre><code>&lt;script&gt;
+    $(function(){
+        $(&quot;.add&quot;).on(&apos;click&apos;,function(eve){
+          $(&quot;.area&quot;).append(&quot;&lt;button class=&apos;test-btn&apos;&gt;test button&lt;/button&gt;&quot;);      
+          $(&quot;.area&quot;).on(&apos;click&apos;,&apos;.test-btn&apos;,function(event){
+            event.stopPropagation();
+            console.log(&quot;test button .....&quot;);     
+
+          });
+        });
+    });
+&lt;/script&gt;
+</code></pre><p>事实会告诉你结果是一样的，这个跟事件冒泡没有任何的关系，其实我们可以看看原因是不是在绑定时才会出现多次执行呢？那我们来试下不用on来进行事件绑定，看看执行结果是什么，这里我们再次修改代码如下：</p>
+<pre><code>&lt;script&gt;
+    $(function(){
+        $(&quot;.add&quot;).click(function(eve){
+          $(&quot;.area&quot;).append(&quot;&lt;button class=&apos;test-btn&apos;&gt;test button&lt;/button&gt;&quot;);      
+          $(&quot;.test-btn&quot;).click(function(){
+            console.log(&quot;test button .....&quot;);
+          });
+        });
+    });    
+&lt;/script&gt;
+</code></pre><p>其实结果依然一样，在事件执行的时候会执行该元素上重复绑定的所有事件。那这个问题我们该如何解决呢？好了，这里我也不卖关子了，下面我来给大家说说解决方法，代码如下：</p>
+<p>第一种解决方法：绑定之前先解绑（代码再次修改如下）</p>
+<pre><code>&lt;script&gt;
+    $(function(){
+        $(&quot;.add&quot;).on(&apos;click&apos;,function(eve){
+          $(&quot;.area&quot;).append(&quot;&lt;button class=&apos;test-btn&apos;&gt;test button&lt;/button&gt;&quot;);
+         //解除
+          $(&quot;.area&quot;).off(&quot;click&quot;);
+         //再绑定
+          $(&quot;.area&quot;).on(&apos;click&apos;,&apos;.test-btn&apos;,function(event){
+
+            console.log(&quot;test button .....&quot;);
+            event.stopPropagation();
+
+          });
+        });
+    });
+&lt;/script&gt;
+</code></pre><p>第二种解决方法：分开写</p>
+<pre><code>&lt;script&gt;
+    $(function(){
+        $(&quot;.add&quot;).on(&apos;click&apos;,function(eve){
+          $(&quot;.area&quot;).append(&quot;&lt;button class=&apos;test-btn&apos;&gt;test button&lt;/button&gt;&quot;);
+
+        });
+         $(&quot;.area&quot;).on(&apos;click&apos;,&apos;.test-btn&apos;,function(){
+            console.log(&quot;test button .....&quot;);
+
+          });
+    });
+&lt;/script&gt;
+</code></pre><p>好了上面只是一个小例子，用来助于大家更容易的理解病因，如果还有朋友不理解，可以试着跑跑上面代码，相信会让你的人生充满记忆 ~</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">html5</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/09/16/bind/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/08/13/phonetouch/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">手机端HTML5触屏事件(touch事件)详解</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+  
+  
   
 
-    
+  
+
+  
 
 
           </div>
@@ -233,8 +420,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

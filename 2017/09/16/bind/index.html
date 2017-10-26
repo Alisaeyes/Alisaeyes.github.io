@@ -9,17 +9,17 @@
   <title>JS事件重复绑定及触发多次的解决方法 | 桃子的博客</title>
   <meta name="keywords" content="小桃子,桃子博客,HTML5技术广场,JavaScript技术栈,前端三大巨头,前端自动化">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="最近在一个项目开发中遇到事件被重复绑定，如果处理不好就会出现同一事件触发多次的问题。今天我抽出了一点时间把这个问题抛出来给大家说一下原因及解决方法。 在这里我们就废话不多说了，我直接上一个简单的例子：页面上有一个按钮。当点击按钮时创建一个类名为test-btn的button代码插入类名为area的div中。接着点击该button，console.log一段文本。如果下代码 &amp;lt;head&amp;gt;">
+  <meta name="description" content="最近在一个项目开发中遇到事件被重复绑定，如果处理不好就会出现同一事件触发多次的问题。今天我抽出了一点时间把这个问题抛出来给大家说一下原因及解决方法。 在这里我们就废话不多说了，我直接上一个简单的例子：页面上有一个按钮。当点击按钮时创建一个类名为test-btn的button代码插入类名为area的div中。接着点击该button，console.log一段文本。如果下代码">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS事件重复绑定及触发多次的解决方法">
 <meta property="og:url" content="http://yoursite.com/2017/09/16/bind/index.html">
 <meta property="og:site_name" content="桃子的博客">
-<meta property="og:description" content="最近在一个项目开发中遇到事件被重复绑定，如果处理不好就会出现同一事件触发多次的问题。今天我抽出了一点时间把这个问题抛出来给大家说一下原因及解决方法。 在这里我们就废话不多说了，我直接上一个简单的例子：页面上有一个按钮。当点击按钮时创建一个类名为test-btn的button代码插入类名为area的div中。接着点击该button，console.log一段文本。如果下代码 &amp;lt;head&amp;gt;">
-<meta property="og:updated_time" content="2017-09-16T06:09:00.945Z">
+<meta property="og:description" content="最近在一个项目开发中遇到事件被重复绑定，如果处理不好就会出现同一事件触发多次的问题。今天我抽出了一点时间把这个问题抛出来给大家说一下原因及解决方法。 在这里我们就废话不多说了，我直接上一个简单的例子：页面上有一个按钮。当点击按钮时创建一个类名为test-btn的button代码插入类名为area的div中。接着点击该button，console.log一段文本。如果下代码">
+<meta property="og:updated_time" content="2017-10-26T05:31:21.950Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS事件重复绑定及触发多次的解决方法">
-<meta name="twitter:description" content="最近在一个项目开发中遇到事件被重复绑定，如果处理不好就会出现同一事件触发多次的问题。今天我抽出了一点时间把这个问题抛出来给大家说一下原因及解决方法。 在这里我们就废话不多说了，我直接上一个简单的例子：页面上有一个按钮。当点击按钮时创建一个类名为test-btn的button代码插入类名为area的div中。接着点击该button，console.log一段文本。如果下代码 &amp;lt;head&amp;gt;">
+<meta name="twitter:description" content="最近在一个项目开发中遇到事件被重复绑定，如果处理不好就会出现同一事件触发多次的问题。今天我抽出了一点时间把这个问题抛出来给大家说一下原因及解决方法。 在这里我们就废话不多说了，我直接上一个简单的例子：页面上有一个按钮。当点击按钮时创建一个类名为test-btn的button代码插入类名为area的div中。接着点击该button，console.log一段文本。如果下代码">
   
     <link rel="alternative" href="/atom.xml" title="桃子的博客" type="application/atom+xml">
   
@@ -181,6 +181,7 @@
       
         <p>最近在一个项目开发中遇到事件被重复绑定，如果处理不好就会出现同一事件触发多次的问题。今天我抽出了一点时间把这个问题抛出来给大家说一下原因及解决方法。</p>
 <p>在这里我们就废话不多说了，我直接上一个简单的例子：页面上有一个按钮。当点击按钮时创建一个类名为test-btn的button代码插入类名为area的div中。接着点击该button，console.log一段文本。如果下代码</p>
+<a id="more"></a>
 <pre><code>&lt;head&gt;
     &lt;style&gt;
         #tableBox{
@@ -379,6 +380,15 @@
   
 <nav id="article-nav">
   
+    <a href="/2017/10/26/vue-case/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          通过todoList案例对Vuejs全面的基础学习
+        
+      </div>
+    </a>
+  
   
     <a href="/2017/08/13/phonetouch/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">手机端HTML5触屏事件(touch事件)详解</div>
@@ -493,19 +503,23 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">html5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Javascript</a>
+                <a href="javascript:void(0)" class="js-tag color1">html5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">sublime</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Javascript</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Meta标签总结及常见问题的解决方法 | 桃子的博客</title>
+  <title>通过todoList案例对Vuejs全面的基础学习 | 桃子的博客</title>
   <meta name="keywords" content="小桃子,桃子博客,HTML5技术广场,JavaScript技术栈,前端三大巨头,前端自动化">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="自古以来都是能人掌天下，在技场上也是同样的道理。一个优秀的开发者，在开发一个项目关注的不止只是功能的实现或视图的展现，想必在项目开发中大家都会组织功能封装，减少代码重写，减小请求负重，提升加载速度等。在我看来，这些都只是家常便饭，因为我一直认为，一名优秀的开发者，不只是单方面的只关注于技术层次，我们更应该学会总结，总结每次项目开发中所遇到的种种问题，碰到的各种奇葩事情，这样也是在更快的提升自己的能">
-<meta name="keywords" content="html5">
+  <meta name="description" content="前言：身处在这个热火朝天的行业，技术在不断的繁衍更新，然而对现在技术人员的要求也是越来越严格，不得不说如果想要在行业扎根立足那必须得不断学习不断进步。最近网上在吵Facebook公司提出的React使用许可协议被聊的很火，可能现在已经在学习这门框架的同学正在纠结当中，想着是否要继续学习下去，为什么呢？因为怕如果所有公司都放弃使用React了岂不白学？这里我想说一句，如果你是想进入比较靠谱的大型企业">
+<meta name="keywords" content="vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Meta标签总结及常见问题的解决方法">
-<meta property="og:url" content="http://yoursite.com/2017/07/24/meta/index.html">
+<meta property="og:title" content="通过todoList案例对Vuejs全面的基础学习">
+<meta property="og:url" content="http://yoursite.com/2017/10/26/vue-case/index.html">
 <meta property="og:site_name" content="桃子的博客">
-<meta property="og:description" content="自古以来都是能人掌天下，在技场上也是同样的道理。一个优秀的开发者，在开发一个项目关注的不止只是功能的实现或视图的展现，想必在项目开发中大家都会组织功能封装，减少代码重写，减小请求负重，提升加载速度等。在我看来，这些都只是家常便饭，因为我一直认为，一名优秀的开发者，不只是单方面的只关注于技术层次，我们更应该学会总结，总结每次项目开发中所遇到的种种问题，碰到的各种奇葩事情，这样也是在更快的提升自己的能">
-<meta property="og:updated_time" content="2017-07-24T15:13:01.133Z">
+<meta property="og:description" content="前言：身处在这个热火朝天的行业，技术在不断的繁衍更新，然而对现在技术人员的要求也是越来越严格，不得不说如果想要在行业扎根立足那必须得不断学习不断进步。最近网上在吵Facebook公司提出的React使用许可协议被聊的很火，可能现在已经在学习这门框架的同学正在纠结当中，想着是否要继续学习下去，为什么呢？因为怕如果所有公司都放弃使用React了岂不白学？这里我想说一句，如果你是想进入比较靠谱的大型企业">
+<meta property="og:updated_time" content="2017-10-26T07:32:33.056Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Meta标签总结及常见问题的解决方法">
-<meta name="twitter:description" content="自古以来都是能人掌天下，在技场上也是同样的道理。一个优秀的开发者，在开发一个项目关注的不止只是功能的实现或视图的展现，想必在项目开发中大家都会组织功能封装，减少代码重写，减小请求负重，提升加载速度等。在我看来，这些都只是家常便饭，因为我一直认为，一名优秀的开发者，不只是单方面的只关注于技术层次，我们更应该学会总结，总结每次项目开发中所遇到的种种问题，碰到的各种奇葩事情，这样也是在更快的提升自己的能">
+<meta name="twitter:title" content="通过todoList案例对Vuejs全面的基础学习">
+<meta name="twitter:description" content="前言：身处在这个热火朝天的行业，技术在不断的繁衍更新，然而对现在技术人员的要求也是越来越严格，不得不说如果想要在行业扎根立足那必须得不断学习不断进步。最近网上在吵Facebook公司提出的React使用许可协议被聊的很火，可能现在已经在学习这门框架的同学正在纠结当中，想着是否要继续学习下去，为什么呢？因为怕如果所有公司都放弃使用React了岂不白学？这里我想说一句，如果你是想进入比较靠谱的大型企业">
   
     <link rel="alternative" href="/atom.xml" title="桃子的博客" type="application/atom+xml">
   
@@ -159,187 +159,274 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-meta" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-vue-case" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Meta标签总结及常见问题的解决方法
+      通过todoList案例对Vuejs全面的基础学习
     </h1>
   
 
         
-        <a href="/2017/07/24/meta/" class="archive-article-date">
-  	<time datetime="2017-07-24T14:12:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-24</time>
+        <a href="/2017/10/26/vue-case/" class="archive-article-date">
+  	<time datetime="2017-10-26T05:23:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>自古以来都是能人掌天下，在技场上也是同样的道理。<br>一个优秀的开发者，在开发一个项目关注的不止只是功能的实现或视图的展现，想必在项目开发中大家都会组织功能封装，减少代码重写，减小请求负重，提升加载速度等。在我看来，这些都只是家常便饭，因为我一直认为，一名优秀的开发者，不只是单方面的只关注于技术层次，我们更应该学会总结，总结每次项目开发中所遇到的种种问题，碰到的各种奇葩事情，这样也是在更快的提升自己的能力及学问，下次开发就不会再重复出现相同问题，节省不必要浪费的时间，就能更快的交出自己的答案。如果你觉得我说的是那么回事，行，我的目的达到了 …</p>
-<p>好，上面扯了一段白话，下面咱们进入主题，讲讲我对于这些基础的总结吧！</p>
+        <p>前言：身处在这个热火朝天的行业，技术在不断的繁衍更新，然而对现在技术人员的要求也是越来越严格，不得不说如果想要在行业扎根立足那必须得不断学习不断进步。最近网上在吵Facebook公司提出的React使用许可协议被聊的很火，可能现在已经在学习这门框架的同学正在纠结当中，想着是否要继续学习下去，为什么呢？因为怕如果所有公司都放弃使用React了岂不白学？这里我想说一句，如果你是想进入比较靠谱的大型企业，可能是会受到影响，但不管怎样，开源了而且优秀，为何要去考虑那么多因素呢？不管怎样受益的终究是自己，何必去管那些流言蜚语，天下之大，总有公司会使用，何必为一些商业手段而放弃自己热衷的技术。好了，这里扯的有点远，我也只是感叹几句，咱们言归正传，今天我给大家聊聊Vuejs，不管好不好，还是希望大家能够给予支持，多来逛逛。</p>
+<p>说到Vuejs，其实我们都应该感谢尤老师对行业所做出的贡献，我在这里必须得点一个赞。</p>
+<p>在学习之前，我们做的第一件事就是要去了解这门框架，我们应该都要对自己进行提问:Vuejs是个什么，它能做些什么？</p>
 <a id="more"></a>
-<p>一、meta标签的总结</p>
-<p>1.keywords,description(经常用到的两个)</p>
-<p>页面的关键字和描述，是写给搜索引擎看的，关键字可以有多个用 ‘,’号隔开</p>
-<pre><code>&lt;meta name=&quot;keywords&quot; content=&quot;HTML,CSS,JAVASCRIPT,PHP&quot;&gt;
-&lt;meta name=&quot;description&quot; content=&quot;html meta标签大全,整理一下加强记忆&quot;&gt;
-</code></pre><p>2.Content-Type</p>
-<p>告诉浏览器当前访问的资源类型</p>
-<pre><code>&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
-&lt;--告诉浏览器当前访问的资源类型 并声明编码--&gt;
-</code></pre><p>3.viewport</p>
-<p>随大小设备自动适配</p>
-<pre><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
-&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=0.5, minimum-scale=1.0, user-scalable=no&quot;/&gt;
-</code></pre><p>说明：</p>
-<p>什么是viewport？</p>
-<p>简单来讲，viewport就是浏览器上，用来显示网页的那一部分区域了，也就是说，浏览器的实际宽度，是和我们手机的宽度不一样的，无论你的手机宽度是320px，还是640px，在手机浏览器内部的宽度，始终会是浏览器本身的viewport。如今的浏览器，都会给自己的本身提供一个viewport的默认值，可能是980px，或者是其他值。就以手机来说吧，目前，新版本的手机浏览器，绝大部分是以980px作为默认的viewport值的。我这里对新版本的不同平台下的浏览器做了测试，经过测试，iphone下的默认viewport为980px，安卓下的浏览器，目前主流的最新浏览器（比如chrome，还有很多国产的像qq，uc）的viewport也是980px了。</p>
-<p>viewport是用来干什么的？</p>
-<p>viewport的默认值，一般来说是大于手机屏幕的。这样就可以做到当我们在浏览桌面端网页的时候，可以让桌面端端网页正常显示（我们普通页面设计的时候，一般页面的主区域是以960px来做的，所以980px这个值，可以做到桌面端网页的正常显示）。但是，其实我们手机的屏幕宽度是没有960px的，因此浏览器会出现横向滚动条。同时，即使是基于980的viewport，我们在移动端浏览我们的桌面页面的体验其实也并不好，所以，一般的，我们会专门给浏览器设计一个移动端的页面。</p>
-<p>viewport默认有6个属性，分别如下：</p>
-<p>width: 设置viewport的宽度（即之前所提及到的，浏览器的宽度详），这里可以为一个整数，又或者是字符串”width-device”</p>
-<p>initial-scale: 页面初始的缩放值，为数字，可以是小数</p>
-<p>minimum-scale: 允许用户的最小缩放值，为数字，可以是小数</p>
-<p>maximum-scale: 允许用户的最大缩放值，为数字，可以是小数</p>
-<p>user-scalable: 是否允许用户进行缩放，’no’为不允许，’yes’为允许</p>
-<p>4.apple-mobile-web-app-capable</p>
-<p>设置Web应用是否以全屏模式运行。</p>
-<pre><code>&lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot;/&gt;
-</code></pre><p>说明：</p>
-<p>如果content设置为yes，Web应用会以全屏模式运行，反之，则不会。content的默认值是no，表示正常显示。你可以通过只读属性window.navigator.standalone来确定网页是否以全屏模式显示。</p>
-<p>5.sharecontent</p>
-<p>微信分享页面设置</p>
-<pre><code>&lt;meta name=&quot;sharecontent&quot; data-msg-img=&quot;缩略图地址&quot; data-msg-title=&quot;标题&quot; data-msg-content=&quot;简介&quot; data-msg-callBack=&quot;&quot; data-line-img=&quot;缩略图地址&quot; data-line-title=&quot;标题&quot; data-line-callBack=&quot;&quot;/&gt;  
-</code></pre><p>6.refresh</p>
-<p>重定向（以下示例5秒后会跳转到：<a href="http://www.taozit.com）" target="_blank" rel="external">http://www.taozit.com）</a></p>
-<pre><code>&lt;meta http-equiv=&quot;refresh&quot; content=&quot;5;url=&quot;http://www.taozit.com&quot; /&gt;
-</code></pre><p>7.full-screen</p>
-<p>全屏显示网页(部分移动端浏览器的专有属性)</p>
-<pre><code>&lt;meta name=&quot;full-screen&quot; content=&quot;yes&quot;/&gt;
-</code></pre><p>8.browsermode</p>
-<p>浏览器模式-强制坚屏显示(部分移动端浏览器的专有属性),</p>
-<pre><code>&lt;meta name=&quot;browsermode&quot; content=&quot;application&quot;/&gt;
-</code></pre><p>9.format-detection</p>
-<p>数据格式验证渲染：<br>telephone：而iPhone会自动把你这个文字加链接样式、并且点击这个数字还会自动拨号！默认开启<br>email：浏览器会识别邮箱并加样式，点击可以调用系统默认邮件应用给该地址发邮件，默认开启<br>adress：adress=yes就开启了点击地址直接跳转至地图的功能，默认开启</p>
-<pre><code>&lt;meta content=&quot;telephone=no&quot; name=&quot;format-detection&quot; /&gt;
-&lt;meta content=&quot;telephone=no,email=no,adress=no&quot; name=&quot;format-detection&quot; /&gt;
-</code></pre><p>10.x5-orientation</p>
-<p>QQ浏览器强制竖屏</p>
-<pre><code>&lt;meta name=&quot;x5-orientation&quot; content=&quot;portrait&quot;/&gt;
-</code></pre><p>11.x5-fullscreen</p>
-<p>QQ浏览器强制全屏</p>
-<pre><code>&lt;meta name=&quot;x5-fullscreen&quot; content=&quot;true&quot;/&gt;
-</code></pre><p>12.x5-page-mode</p>
-<p>QQ浏览器应用模式</p>
-<pre><code>&lt;meta name=&quot;x5-page-mode&quot; content=&quot;app&quot;/&gt;
-</code></pre><p>13.X-UA-Compatible</p>
-<p>IE的兼容模式:以IE的哪个版本去渲染页面（IE=8：以IE8的模式去渲染页面，IE=Edge:以最新版本的IE去渲染页面，当然这个最新指的是你系统装的最高版本的IE）</p>
-<pre><code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=8&quot; /&gt;
-&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=Edge&quot; /&gt;
-</code></pre><p>14.renderer</p>
-<p>这貌似是360浏览器专用，兼容360的利器啊，，360默认是用IE7去渲染页面的，不管你的系统装了多高版本的IE,这种行为真是业界毒瘤啊。</p>
-<pre><code>&lt;meta name=&quot;renderer&quot; content=&quot;webkit&quot;&gt;//默认webkit内核
-&lt;meta name=&quot;renderer&quot; content=&quot;ie-comp&quot;&gt;//默认IE兼容模式
-&lt;meta name=&quot;renderer&quot; content=&quot;ie-stand&quot;&gt;//默认IE标准模式
-</code></pre><p>15.Cache-Control</p>
-<p>设置缓存</p>
-<pre><code>&lt;meta http-equiv=&quot;Cache-Control&quot; content=&quot;no-cache&quot; /&gt;
-</code></pre><p>说明：<br>手机页面通常在第一次加载后会进行缓存，然后每次刷新会使用缓存而不是去重新向服务器发送请求。如果不希望使用缓存可以设置no-cache。</p>
-<p>二、常见问题解决方法：</p>
-<p>1.上下拉动滚动条时卡顿、慢</p>
-<pre><code>body {
-  -webkit-overflow-scrolling: touch;
-  overflow-scrolling: touch;
-}
-</code></pre><p>2.禁止复制、选中文本</p>
-<pre><code>element {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -khtml-user-select: none;
-   user-select: none;
-}
-</code></pre><p>3.长时间按住页面出现闪退</p>
-<pre><code>element {
-  -webkit-touch-callout: none;
-}
-</code></pre><p>  iphone及ipad下输入框默认内阴影</p>
-<pre><code>element{
-  -webkit-appearance: none; 
-}
-</code></pre><p>4.ios和android下触摸元素时出现半透明灰色遮罩</p>
-<pre><code>element{
-  -webkit-tap-highlight-color:rgba(255,255,255,0)
-}
-</code></pre><p>设置alpha值为0就可以去除半透明灰色遮罩<br>备注：transparent的属性值在android下无效</p>
-<p>5.Retina屏的1px边框</p>
-<pre><code>element{
-  border-width: thin;
-}
-</code></pre><p>6.旋转屏幕时，字体大小调整的问题</p>
-<pre><code>html, body, form, fieldset, p, div, h1, h2, h3, h4, h5, h6 {
-  -webkit-text-size-adjust:100%;
-}
-</code></pre><p>7.transition闪屏</p>
-<pre><code>/*设置内嵌的元素在 3D 空间如何呈现：保留3D */
--webkit-transform-style: preserve-3d;
-/* 设置进行转换的元素的背面在面对用户时是否可见：隐藏 */
--webkit-backface-visibility:hidden;
-</code></pre><p>8.圆角bug</p>
-<p>某些Android手机圆角失效</p>
-<pre><code>background-clip: padding-box;  
-</code></pre><p>9.桌面图标</p>
-<pre><code>&lt;link rel=&quot;apple-touch-icon&quot; href=&quot;touch-icon-iphone.png&quot; /&gt;
-&lt;link rel=&quot;apple-touch-icon&quot; sizes=&quot;76x76&quot; href=&quot;touch-icon-ipad.png&quot; /&gt;
-&lt;link rel=&quot;apple-touch-icon&quot; sizes=&quot;120x120&quot; href=&quot;touch-icon-iphone-retina.png&quot; /&gt;
-&lt;link rel=&quot;apple-touch-icon&quot; sizes=&quot;152x152&quot; href=&quot;touch-icon-ipad-retina.png&quot; /&gt;
-</code></pre><p>iOS下针对不同设备定义不同的桌面图标。如果不定义则以当前屏幕截图作为图标。<br>上面的写法可能大家会觉得会有默认光泽，下面这种设置方法可以去掉光泽效果，还原设计图的效果！</p>
-<pre><code>&lt;link rel=&quot;apple-touch-icon-precomposed&quot; href=&quot;touch-icon-iphone.png&quot; /&gt;
-</code></pre><p>图片尺寸可以设定为5757（px）或者Retina可以定为114114（px），ipad尺寸为72*72（px)</p>
-<p>10.启动画面</p>
-<pre><code>&lt;link rel=&quot;apple-touch-startup-image&quot; href=&quot;start.png&quot;/&gt;
-</code></pre><p>11.iOS下页面启动加载时显示的画面图片，避免加载时的白屏。</p>
-<p>可以通过madia来指定不同的大小：</p>
-<pre><code>&lt;!--iPhone--&gt;
-&lt;link href=&quot;apple-touch-startup-image-320x460.png&quot; media=&quot;(device-width: 320px)&quot; rel=&quot;apple-touch-startup-image&quot; /&gt;
+<p>这里，官网给出的解释是：Vue一套构建用户界面的渐进式框架。与其他重量级框架不同的是，Vue采用自底向上增量开发的设计。Vue的核心库只关注视图层，它不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与单文件组件和 Vue 生态系统支持的库结合使用时，Vue也完全能够为复杂的单页应用程序提供驱动。</p>
+<p>上方我们做出了对vue的一个解释，下面我们就来开始进入代码片段了。首先，我们需要构建一个vue项目，这里我们使用vue官方给出的vue-cli去构建一个项目，在构建之前，我们需要在电脑安装Nodejs，因为我们的工程是需要依赖于这个环境当中，所以在构建之前，如果还有没有安装Nodejs的伙伴可以先去官网下载一个包进行安装，当然我相信绝大数都已经有了，好了如果已经有了那就可以执行以下几个指令来构建一个vue项目：</p>
+<p>这里我们需要使用Npm工具来进行全局安装vue-cli（Npm是一个包管理工具，安装完Node后会随Node一起安装）</p>
+<pre><code># 全局安装 vue-cli
+$ npm i -g vue-cli    //这里的i参数代表install，安装的意思，-g是global全局的意思
+</code></pre><p>如果安装好了vue-cli后，我们就可以开始创建一个项目了，执行以下命令：</p>
+<pre><code>vue init webpack my-vue-project    
+//整句语义是，我们使用了vue-cli来初始化创建一个基于webpack模板的vue项目，my-vue-project为项目的名称
+</code></pre><p>如果如果你完成了以上步骤，那么恭喜你已经成功构建好了一个vue项目，下面我们需要去运行这个项目，需要执行以下命令：</p>
+<pre><code>cd my-vue-project //进入到项目目录
+npm i //使用npm安装项目所需依赖
+npm run dev //上方依赖安装完成之后，通过该命令启动并浏览项目
+</code></pre><p>到此，我们就成功的在电脑上安装了一个vue项目，下面我们通过一个例子来讲解vue的一些基本指令操作。这里我说下再上方创建项目时中间会有几个选项操作，会让我们选是否安装一些中间件，这里创建的我只选用了vue-router，当然本次不会讲解vue-router内容，这里只是告诉各位一声在创建项目时中间有几个步骤。</p>
+<p>现在我来给大家说明下项目目录结构：</p>
+<pre><code>.
+├── README.md
+├── build                 // 构建服务和webpack配置
+├── config                // 项目不同环境的配置
+├── dist                  // 项目build目录
+├── index.html            // 项目入口文件
+├── package.json          // 项目配置文件
+├── src
+│   ├── common            // 公用资源
+│   ├── components        // 各种组件
+│   ├── router            // 存放路由的文件夹
+│   ├── App.Vue           // 模板文件入口
+│   └── main.js           // Webpack 预编译入口
+├── static                // css js 和图片资源
+</code></pre><p>上方是项目的目录结构，我也做了一些注释，然后我们进入到src目录打开App.vue文件，在模板去除view-router这组标签，刚才我们说到，本次项目对vue-router不做讲解，所以例子就直接写在当前这个文件下面，然后还需要把原有的css样式与图片结构去除。这样我们现在访问浏览项目就会是一片空白了，下面我们就开始写DEMO了，不过我得先给大家描述一下DEMO的功能，需求是这样的：在页面上有一个输入框和一个按钮，下方有一个待添加项和一个添加后的列表，列表带有删除操作，当我们在输入框内输入一个项目名称时这个项目会先进待添加项栏目，当我们点击按钮时项目就会被成功添加到列表，添加列表后列表每一项会有一个删除功能并且带有全选和批量删除功能，说到这相信大家心里已经有了一个功能体的模样了，好了那我们就开始来实现这个DEMO。</p>
+<p>到这，我把整个DEMO的代码都贴出来，然后再来做讲解，下方是整个DEMO的全部代码：</p>
+<pre><code>&lt;template&gt;
+  &lt;div id=&quot;app&quot;&gt;
+      &lt;input type=&quot;text&quot; v-model=&quot;name&quot; placeholder=&quot;请输入项目名称&quot;&gt;&lt;button v-on:click=&quot;addProject&quot;&gt;添加&lt;/button&gt;
+      &lt;p&gt;待添加项目：&lt;span v-text=&quot;name&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+      &lt;div @click=&quot;isShow=!isShow&quot; style=&quot;cursor:pointer&quot;&gt;{{isShow?"收起列表":"展开列表"}}&lt;/div&gt;
+      &lt;div v-show=&quot;isShow&quot;&gt;
+          &lt;table&gt;
+            &lt;thead&gt;
+              &lt;tr&gt;
+                &lt;th&gt;&lt;/th&gt;
+                &lt;th&gt;编号&lt;/th&gt;
+                &lt;th&gt;名称&lt;/th&gt;
+                &lt;th&gt;操作&lt;/th&gt;  
+              &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody&gt;
+              &lt;tr v-for=&quot;(item,index) in list&quot; :key=&quot;index&quot;&gt;
+                &lt;td&gt;&lt;input type=&quot;checkbox&quot; :checked=&quot;item.check&quot; @change=&quot;resetItem(--index)&quot;&gt;&lt;/td&gt;
+                &lt;td&gt;{{++index}}&lt;/td&gt;
+                &lt;td v-html=&quot;item.name&quot;&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;button @click=&quot;deleteItem(--index)&quot;&gt;删除&lt;/button&gt;&lt;/td&gt;  
+              &lt;/tr&gt;
+            &lt;/tbody&gt;
+            &lt;tfoot&gt;
+                &lt;tr&gt;
+                  &lt;td&gt;&lt;button @click=&quot;allSelect(true)&quot;&gt;全选&lt;/button&gt;&lt;/td&gt;
+                  &lt;td&gt;&lt;button @click=&quot;allSelect(false)&quot;&gt;取消全选&lt;/button&gt;&lt;/td&gt;
+                  &lt;td&gt;&lt;button @click=&quot;deleteAllItem&quot;&gt;删除所选项&lt;/button&gt;&lt;/td&gt;
+                  &lt;td&gt;&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/tfoot&gt;
+          &lt;/table&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
 
-&lt;!-- iPhone Retina --&gt;
-&lt;link href=&quot;apple-touch-startup-image-640x920.png&quot; media=&quot;(device-width: 320px) and (-webkit-device-pixel-ratio: 2)&quot; rel=&quot;apple-touch-startup-image&quot; /&gt;
+&lt;script&gt;
+    export default {
+      name: &apos;app&apos;,
+      data(){
+        return {
+           name:&quot;&quot;,
+           list:[
+             {
+              check:false,
+              name:&quot;第一个项目&quot;
+             },{
+              check:false,
+              name:&quot;第二个项目&quot;
+             },{
+              check:false,
+              name:&quot;第三个项目&quot;
+             },{
+              check:false,
+              name:&quot;第四个项目&quot;
+             },{
+              check:false,
+              name:&quot;第五个项目&quot;
+             }
+           ],
+          isShow:false
+        }
+      },
+      methods:{
+        addProject(){
+          if(!this.name)return false;
+          this.list.push({
+            check:false,
+            name:this.name
+          });
+          this.name = &quot;&quot;;
+        },
+        deleteItem(index){
+          this.list.splice(index,1);
+        },
+        allSelect(isOn){
+          this.list.map(item=&gt;{
+            item.check = isOn;
+          })
+        },
+        deleteAllItem(){
+          const arr = this.list.filter((item)=&gt;!item.check);
+          this.list = arr;
+        },
+        resetItem(index){
+          this.list[index].check = !this.list[index].check;
+        }
+      },
+      watch:{
+        list:(newVal,oldVal)=&gt;{
+          console.log(newVal)
+        }
+      },
+      props:[],
+      components:{
 
-&lt;!-- iPhone 5 --&gt;
-&lt;link rel=&quot;apple-touch-startup-image&quot; media=&quot;(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)&quot; href=&quot;apple-touch-startup-image-640x1096.png&quot;&gt;
+      }
+    }
+&lt;/script&gt;
+</code></pre><p>代码已经全部贴出来了，现在我给大家说说DEMO的思路和一些参数指令的意思，我们一眼看去模板里面的html结构是很简单的，我就不做解释，这里我们先来看看一些指令在其中的作用，可以很清楚的看见在输入框元素上有一个v-model指令然后其值是下方script里面data方法返回出去的对象里面的一个属性，v-model是用作表单双向绑定用的，这里说到双向绑定我不得不扯一下，双向绑定的意思是数据变了视图就变了相反视图变了数据就变了，意思就是说当我们把v-model绑定到一个输入框上，然后通过data方法内部返回的一个数据相关联时就实现了一个双向绑定的功能，也就是说当我们把数据去改了，视图就会随数据变，当我们在输入框内重置内容这时数据会跟随我们人为操作发生改变，这也就是所谓的双向绑定。</p>
+<p>上面我们说完了双向绑定，现在我来说说事件绑定，vue里面在节点上绑定一个事件有两种方法，一种是简写一种是全写的，当然这两种方式在案例里面我已经全部体现出来了，它们分别是v-on和@符号，具体用法可看上面代码，绑定事件的值可是函数或者一个表达式。在开发中，我们很多时候都需要给节点上绑定一个属性，在vue里面如果要在节点上绑定一个属性需要用v-bind进行绑定，当然也有简写的方式一个:冒号后面跟属性名就可以了。</p>
+<p>在做业务渲染时，渲染数据vue提供了三种形式一种是v-text，一种v-html，最后一种是双大括号，当然我们上方案例都有用到，这里我给大家说一下区别，v-text是用作渲染一个文本的，v-html是用做渲染一个文本或者一个节点及多个节点的，双大括号的意思就相当于一个语法糖，两者兼容，在两个多括号之间可以执行js的表达式。渲染数据循环是比不可少的，不错vue提供了一个v-for指令可做数据渲染，其用法可以看上方代码，这里我只做讲解，通常情况下我们渲染数据都会是数组或对象，这里循环如果循环数组vue提供出两个参数第一个参数是val第二个是index，也就是数组的每项和索引，这个很好理解，如果循环的是对象，那么第二参是key，也就是有三个参数。这里v-for默认行为试着不改变整体，而是替换元素。迫使其重新排序的元素，需要提供一个key的特殊属性，所以你们可以看见DEMO中我在循环结构之上添加了一个key属性。</p>
+<p>上方我们已经说了一部分常用的指令了，不过还是欠缺一个常用的指令，也就是判断，v-if,v-else。由于上方案例对这对指令用法写的不明确，这里我来举例说明：</p>
+<pre><code>&lt;div class=&quot;div1&quot; v-if=&quot;条件表达式&quot;&gt;
 
-&lt;!-- iPad portrait --&gt;
-&lt;link href=&quot;apple-touch-startup-image-768x1004.png&quot; media=&quot;(device-width: 768px) and (orientation: portrait)&quot; rel=&quot;apple-touch-startup-image&quot; /&gt;
+&lt;/div&gt;
 
-&lt;!-- iPad landscape --&gt;
-&lt;link href=&quot;apple-touch-startup-image-748x1024.png&quot; media=&quot;(device-width: 768px) and (orientation: landscape)&quot; rel=&quot;apple-touch-startup-image&quot; /&gt;
+&lt;div class=&quot;div2&quot; v-else&gt;
 
-&lt;!-- iPad Retina portrait --&gt;
-&lt;link href=&quot;apple-touch-startup-image-1536x2008.png&quot; media=&quot;(device-width: 1536px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)&quot; rel=&quot;apple-touch-startup-image&quot; /&gt;
+&lt;/div&gt;
+</code></pre><p>上面那段代码就是v-if的一个基本用法，如果条件成立就会渲染div1的内容否则渲染div2内容。当然有时候我们有多个条件判断，那么写法如下：</p>
+<pre><code>&lt;div class=&quot;div1&quot; v-if=&quot;第一个条件表达式&quot;&gt;
 
-&lt;!-- iPad Retina landscape --&gt;
-&lt;link href=&quot;apple-touch-startup-image-1496x2048.png&quot;media=&quot;(device-width: 1536px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)&quot;rel=&quot;apple-touch-startup-image&quot; /&gt;
-</code></pre><p>12.ios 设置input 按钮样式会被默认样式覆盖</p>
-<pre><code>input,
-textarea {
-  border: 0; 
-  -webkit-appearance: none; 
-}
-</code></pre><p>设置默认样式为none</p>
-<p>13.IOS键盘字母输入，默认首字母大写</p>
-<p>解决方案，设置如下属性：</p>
-<pre><code>&lt;input type=&quot;text&quot; autocapitalize=&quot;off&quot; /&gt;
-</code></pre><p>14.select 下拉选择设置右对齐</p>
-<pre><code>select option {
-    direction: rtl;
-}
-</code></pre><p>15.消除IE10里面的那个叉号</p>
-<pre><code>input:-ms-clear{display:none;}
-</code></pre>
+&lt;/div&gt;
+
+&lt;div class=&quot;div2&quot; v-else-if=&quot;第二个条件表达式&quot;&gt;
+
+&lt;/div&gt;
+
+&lt;div class=&quot;div2&quot; v-else&gt;
+
+&lt;/div&gt;
+</code></pre><p>上方代码就是多个条件判断，依次类推，如果第一个条件不成立就走第二个条件，如果第二个不成立就走第三个条件…..，如果以上条件都不成立则走v-else。</p>
+<p>说到这里，上方模板里面的指令基本都说了一遍，不过有一个地方我在这里需要提一下，在上方DEMO展开和不展开那块，我们是通过v-if指令给列表做的显示与不显示，其实那个地方完全可以使用v-show指令去实现需求是再适合不过，v-show指令使用来对一个区域进行显示与隐藏用的，它的值是一个布尔值，true代表显示，false代表隐藏。</p>
+<p>上面我们说了常用的一些指令，下面我讲解一下js部分的代码，js中我们通过es6的模块export默认返回出去了一个对象，而这个对象最终作用于main.js文件当中，main.js文件内通过import导入了模块下方实例化了Vue对象，注册了一个app组件把它渲染到一个id叫app的节点里面去了，当然最终的去向就是index.html文件内，下方是代码：</p>
+<pre><code>//main.js
+import Vue from &apos;vue&apos;
+import App from &apos;./App&apos;
+import router from &apos;./router&apos;
+
+Vue.config.productionTip = false
+
+/* eslint-disable no-new */
+new Vue({
+  el: &apos;#app&apos;,
+  router,
+  template: &apos;&lt;App/&gt;&apos;,
+  components: { App }
+})
+
+//index.html
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;myproject&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id=&quot;app&quot;&gt;&lt;/div&gt;
+    &lt;!-- built files will be auto injected --&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>也就是说main.js文件是整个项目的入口，app.vue文件是整个项目组件的集合地，最后main.js文件内实例化Vue对象后就会把app.vue里面所有组件依赖全部编译成整套逻辑，生成一个完整的项目体，最后可通过编译生成一套可上线的生产环境代码。好，我们说完了整个项目的依赖关系，现在开始来讲讲DEMO的代码，我们回到app.vue文件当中来，我们可以看到在暴露出去的对象里面，有一个name属性，这个name属性是一个元素选择器，选择到上方模板内根元素id叫app的div，其作用是在这个div之内，可执行vue的逻辑代码，也就是给该模板一个能够执行vue代码的环境，讲到这里有一个坑我不得不说一下，就是在template模板之内根元素只能存在一个，多一个不行，不然就会抛错。</p>
+<p>data方法是用作当前这个组件内部数据管理，可以看做成初始化数据，在它内部设置的任意一条数据都可直接对模板视图层进行绑定，同样也可以根据其它方法内进行调用，在这里能很清楚的看到，现在data返回的对象里面存在三条数据，name、list、isShow，name是用作于对表单输入框的双向绑定，list是初始化列表数据，isShow控制着列表的显示与隐藏状态。</p>
+<p>往下看，可以看到一个叫methods的东西，里面定义着很多方法，也就是说methods是用作存放我们需要用到的所有方法。内部现在存放了五个方法，添加项目的addProject方法，删除项目的deleteItem方法，全选与取消全选allSelect方法，删除所有项目deleteAllItem方法，最后一个是操作复选框的resetItem方法，我们很容易的可以看到这五个方法分别用作于事件上面，在触发事件后所执行的逻辑，在每个函数里面可以发现并没有对节点进行操作，而控制的都是数据，对数据进行增删操作，数据变化了页面也就发生改变，这就是所谓的数据驱动。</p>
+<p>watch是用来监听数据变化的，在DEMO中我们可以看到，我在内部写了一个函数，键名也就是所监听的数据属性名，值是一个函数，函数有两个参数，第一个参数是数据发生改变之后的新数据，第二个参数是改变之前的数据，也就是说当监听的数据发生改变之后就会执行这里的函数，然而我们就能够在数据发生改变时去做对应的逻辑处理。</p>
+<p>props是用作于父子组件通信用的，以上我们没有用到这个东西所以这里我举例来说明一下其用法，在DEMO的components目录内我们可以看到一个hello组件，这里我们把它上面代码修改一下引入这个组件，下面请看代码：</p>
+<pre><code>//app.vue
+&lt;templeta&gt;
+    &lt;div id=&quot;app&quot;&gt;
+        &lt;hello :name=&quot;name&quot;&gt;&lt;/hello&gt;
+    &lt;/div&gt;
+&lt;/templeta&gt;
+
+&lt;script&gt;
+    import hello from &quot;./components/Hello&quot;
+    export default {
+      name: &apos;app&apos;,
+      data(){
+        return {
+           name:&quot;吴佳&quot;
+        }
+      },
+      methods:{
+
+      },
+      watch:{
+
+      },
+      components:{
+        hello
+      }
+    }
+&lt;/script&gt;
+
+//hello.vue
+&lt;templeta&gt;
+    &lt;div id=&quot;app&quot;&gt;
+        &lt;div&gt;{{name}}&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/templeta&gt;
+
+&lt;script&gt;
+    export default {
+      name: &apos;app&apos;,
+      data(){
+        return {
+
+        }
+      },
+      methods:{
+
+      },
+      watch:{
+
+      },
+      props:[&apos;name&apos;]
+    }
+&lt;/script&gt;
+</code></pre><p>就上方例子我们可以看到，我在app.vue内引入了hello组件并把hello组件写入到了模板当中设置了一个属性叫name，然后再hello组件内部我们通过props数组内部注册了再父级组件内设置的name属性，意思就是在调用组件时设置的属性都可用作props注册，然后子组件就可以获取到由父组件传递给子组件的数据，这就是父组件与子组件通信。</p>
+<p>component在上方例子中我们已经使用到了，很明显我们是用来激活组件用的，也就是在当前组件内引入其它组件必须通过components进行注册才能用作于模板当中使用，不然会直接抛错。</p>
+<p>在本案例当中，我并没有去讲有关es6的东西，如果有对es6语法不熟悉的朋友建议去看看阮一峰老师的ECMAscript6入门，如果对我讲解的内容有所问题或者疑问的都可以直接联系我与我进行探讨。</p>
+<p>DEMO代码存放地址：<a href="https://github.com/wujiabk/vue-todolist" target="_blank" rel="external">https://github.com/wujiabk/vue-todolist</a></p>
+
       
 
       
@@ -373,7 +460,7 @@ textarea {
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">html5</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
         		</li>
       		
 		</ul>
@@ -429,7 +516,7 @@ textarea {
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/24/meta/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/10/26/vue-case/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -443,18 +530,9 @@ textarea {
   
 <nav id="article-nav">
   
-    <a href="/2017/08/13/phonetouch/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          手机端HTML5触屏事件(touch事件)详解
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/07/12/sublime-tool/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">sublime常用快捷键及插件的推荐与安装</div>
+    <a href="/2017/09/16/bind/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JS事件重复绑定及触发多次的解决方法</div>
       <i class="icon-circle-right"></i>
     </a>
   

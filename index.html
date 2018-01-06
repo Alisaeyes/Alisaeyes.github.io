@@ -196,52 +196,10 @@ const server = http.createServer((req, res) =&gt; {
 server.listen(port, hostname, () =&gt; {
   console.log(`Server running at http://${hostname}:${port}/`);
 });
-</code></pre><p>上面那段就是使用Node起的一个服务，首先先引入了一个http模块，这个模块是Node内置的一个接口，然后通过这个接口使用createServer方法来创建一个服务，可传递一个回调函数，回调函数可以接受两个参数，req就是request(请求)，res就是response(响应)，我们这里通过响应来确定当前的服务是否创建成功，然后可以设置相关的头信息及反馈内容。然后通过listen方法来设置访问地址及端口，通过回调函数就能打印出当前服务的启动地址。至此一个服务就这样子跑起来了，大家可以去体验一下，下面咱们就来说说Express。</p>
-<p>在说Express之前，先说下如何去运行上面的那段代码，可能对Node不太了解的朋友已经懵逼了，可能会问这个代码要怎么去运行，浏览器里面吗？那就大错特错了，如果不熟悉的朋友，你们可以按照我说的方式来运行代码，就能去看自己写的这个服务了。首先，大家需要按一下键盘左下角ctrl键靠右的windows键，然后在搜索框内搜索cmd回车就会弹出一个cmd的命令行窗口，然后需要通过命令行去找到所在的项目目录，比如我的文件在E盘下的server目录，名字就叫server.js，这个时候我们需要通过命令 “E:” 然后回车，然后通过cd进入到server目录“cd sever”，然后通过node运行server.js文件“node server.js”,这样就成功的启动了这个服务。</p>
-<p>说完了Node创建服务，现在我们来说说Express。Express 是一个基于 Node.js 平台的极简、灵活的 web 应用开发框架，它提供一系列强大的特性，帮助你创建各种 Web 和移动设备应用。我们在使用Express前，需要把关于Express的依赖文件给安装到项目里面来，其实安装起来是非常简单的，我们需要使用Node的NPM包管理工具来为我们做项目的依赖处理，NPM是随同NodeJS一起安装的包管理工具，能解决NodeJS代码部署上的很多问题。</p>
-<p>下面我们需要回到刚才的那个server目录，然后继续执行命令，使用“npm init”来为我们项目生成一个名叫package.json的配置文件，一路回车最后输入一个“yes”然后回车，回到目录查看就能看见这个文件，当然这个文件具体是有何作用大家可以下去后具体了解，这里我就不做讲解了，如果你完成了配置文件的生产，下面就可以开始安装Express了：</p>
-<p>在cdm内执行命令<br>    npm install express –save</p>
-<p>等待上方下载完成后，Express就会安装进我们项目里面来了。</p>
-<p>如果以上步骤你都做完了，那现在就可以使用Express来创建一个web服务了，具体代码如下：</p>
-<p>我写了一些路由，匹配前端请求的路径名，然后返回前端一些字符串（因为我用的是res.end()方法，只能接受字符串和buffer所以我这里返回的是字符串）</p>
-<pre><code>//引入express框架
-let express=require(&apos;express&apos;);
-
-//定义一个变量调用express各种方法
-let app=express();
-
-/* app上有很多匹配请求方法 app.get app.post app.put app.delet
-app定义路由，其实也是一个函数，定义的很多方法
-当客户端以GET方式访问服务器/路由时候，会有那个函数进行处理 */
-app.get(&apos;/&apos;,function (req,res) {
-     res.end(&apos;home&apos;);
-})
-
-/*当客户的以get方式访问服务器/user路径时候，会有那个函数进行处理
- 三部分 请求 路径 函数 */
-app.get(&apos;/user&apos;,function (req,res) {
-     res.end(&apos;user&apos;);
-})
-
-/* app.all能匹配所有的方法，不管客户端请求过来的方法名是什么，都能匹配上
-所以这个方法一定要放在最后面，意思上前面都没有匹配中后，匹配all */
-// * 代表所有的路径
-app.all(&apos;*&apos;,function (req,res) {
-     res.end(&apos;not found&apos;)
-})
-
-//我们要监控我们的服务端口号
-app.listen(8080);
-
-/* listen源码
-var http = require(&apos;http&apos;);
-app.listen = function listen() {
-     var server = http.createServer(this);
-     return server.listen.apply(server, arguments);
-};
-*/
-</code></pre><p>上面就是利用express启动一个server服务的方法，代码的寓意我在上方也做了注释，说的都是基本的基础知识，希望能帮到你们，给你们提供参考吧。</p>
-
+</code></pre>
+        
+          <a class="article-more-a" href="/2018/01/06/nodeserver/#more">more >></a>
+        
       
 
       
@@ -887,11 +845,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">node</a>
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+                <a href="javascript:void(0)" class="js-tag color5">node</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -899,7 +857,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
+                <a href="javascript:void(0)" class="js-tag color3">sublime</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -907,7 +865,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">sublime</a>
+                <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
               </li>
              
               <li class="article-tag-list-item">

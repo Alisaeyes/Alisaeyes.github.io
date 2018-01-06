@@ -16,7 +16,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/01/06/nodeserver/index.html">
 <meta property="og:site_name" content="桃子的博客">
 <meta property="og:description" content="相信作为一名前端人来说，Node这门技术是经常在耳边听起，甚至已经开始在使用了。但不管怎么样，今天我还是要给大家聊聊它。所谓的Node其实它是javascript编写的服务器语言，同时它又是属于后台的框架，是一个开放性的平台；Node是一个基于 Chrome V8 引擎的 JavaScript 运行环境。 Node 使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。 我们在使用Node">
-<meta property="og:updated_time" content="2018-01-06T09:23:06.608Z">
+<meta property="og:updated_time" content="2018-01-06T09:25:28.680Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Node Express优雅的启动一个服务">
 <meta name="twitter:description" content="相信作为一名前端人来说，Node这门技术是经常在耳边听起，甚至已经开始在使用了。但不管怎么样，今天我还是要给大家聊聊它。所谓的Node其实它是javascript编写的服务器语言，同时它又是属于后台的框架，是一个开放性的平台；Node是一个基于 Chrome V8 引擎的 JavaScript 运行环境。 Node 使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。 我们在使用Node">
@@ -196,7 +196,8 @@ const server = http.createServer((req, res) =&gt; {
 server.listen(port, hostname, () =&gt; {
   console.log(`Server running at http://${hostname}:${port}/`);
 });
-</code></pre><p>上面那段就是使用Node起的一个服务，首先先引入了一个http模块，这个模块是Node内置的一个接口，然后通过这个接口使用createServer方法来创建一个服务，可传递一个回调函数，回调函数可以接受两个参数，req就是request(请求)，res就是response(响应)，我们这里通过响应来确定当前的服务是否创建成功，然后可以设置相关的头信息及反馈内容。然后通过listen方法来设置访问地址及端口，通过回调函数就能打印出当前服务的启动地址。至此一个服务就这样子跑起来了，大家可以去体验一下，下面咱们就来说说Express。</p>
+</code></pre><a id="more"></a>
+<p>上面那段就是使用Node起的一个服务，首先先引入了一个http模块，这个模块是Node内置的一个接口，然后通过这个接口使用createServer方法来创建一个服务，可传递一个回调函数，回调函数可以接受两个参数，req就是request(请求)，res就是response(响应)，我们这里通过响应来确定当前的服务是否创建成功，然后可以设置相关的头信息及反馈内容。然后通过listen方法来设置访问地址及端口，通过回调函数就能打印出当前服务的启动地址。至此一个服务就这样子跑起来了，大家可以去体验一下，下面咱们就来说说Express。</p>
 <p>在说Express之前，先说下如何去运行上面的那段代码，可能对Node不太了解的朋友已经懵逼了，可能会问这个代码要怎么去运行，浏览器里面吗？那就大错特错了，如果不熟悉的朋友，你们可以按照我说的方式来运行代码，就能去看自己写的这个服务了。首先，大家需要按一下键盘左下角ctrl键靠右的windows键，然后在搜索框内搜索cmd回车就会弹出一个cmd的命令行窗口，然后需要通过命令行去找到所在的项目目录，比如我的文件在E盘下的server目录，名字就叫server.js，这个时候我们需要通过命令 “E:” 然后回车，然后通过cd进入到server目录“cd sever”，然后通过node运行server.js文件“node server.js”,这样就成功的启动了这个服务。</p>
 <p>说完了Node创建服务，现在我们来说说Express。Express 是一个基于 Node.js 平台的极简、灵活的 web 应用开发框架，它提供一系列强大的特性，帮助你创建各种 Web 和移动设备应用。我们在使用Express前，需要把关于Express的依赖文件给安装到项目里面来，其实安装起来是非常简单的，我们需要使用Node的NPM包管理工具来为我们做项目的依赖处理，NPM是随同NodeJS一起安装的包管理工具，能解决NodeJS代码部署上的很多问题。</p>
 <p>下面我们需要回到刚才的那个server目录，然后继续执行命令，使用“npm init”来为我们项目生成一个名叫package.json的配置文件，一路回车最后输入一个“yes”然后回车，回到目录查看就能看见这个文件，当然这个文件具体是有何作用大家可以下去后具体了解，这里我就不做讲解了，如果你完成了配置文件的生产，下面就可以开始安装Express了：</p>
@@ -455,11 +456,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">node</a>
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+                <a href="javascript:void(0)" class="js-tag color5">node</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -467,7 +468,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
+                <a href="javascript:void(0)" class="js-tag color3">sublime</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -475,7 +476,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">sublime</a>
+                <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
               </li>
              
               <li class="article-tag-list-item">

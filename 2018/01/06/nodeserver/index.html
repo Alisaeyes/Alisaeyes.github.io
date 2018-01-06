@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017/10 | 桃子的博客</title>
+  <title>nodeserver | 桃子的博客</title>
   <meta name="keywords" content="小桃子,桃子博客,HTML5技术广场,JavaScript技术栈,前端三大巨头,前端自动化">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="从未试图抱怨，一直努力改变">
-<meta property="og:type" content="website">
-<meta property="og:title" content="桃子的博客">
-<meta property="og:url" content="http://yoursite.com/archives/2017/10/index.html">
+  <meta name="description" content="标题：使用Node Express优雅的启动一个服务 相信作为一名前端人来说，Node这门技术是经常在耳边听起，甚至已经开始在使用了。但不管怎么样，今天我还是要给大家聊聊它。所谓的Node其实它是javascript编写的服务器语言，同时它又是属于后台的框架，是一个开放性的平台；Node是一个基于 Chrome V8 引擎的 JavaScript 运行环境。 Node 使用了一个事件驱动、非阻塞式">
+<meta name="keywords" content="node">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nodeserver">
+<meta property="og:url" content="http://yoursite.com/2018/01/06/nodeserver/index.html">
 <meta property="og:site_name" content="桃子的博客">
-<meta property="og:description" content="从未试图抱怨，一直努力改变">
+<meta property="og:description" content="标题：使用Node Express优雅的启动一个服务 相信作为一名前端人来说，Node这门技术是经常在耳边听起，甚至已经开始在使用了。但不管怎么样，今天我还是要给大家聊聊它。所谓的Node其实它是javascript编写的服务器语言，同时它又是属于后台的框架，是一个开放性的平台；Node是一个基于 Chrome V8 引擎的 JavaScript 运行环境。 Node 使用了一个事件驱动、非阻塞式">
+<meta property="og:updated_time" content="2018-01-06T08:48:26.776Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="桃子的博客">
-<meta name="twitter:description" content="从未试图抱怨，一直努力改变">
+<meta name="twitter:title" content="nodeserver">
+<meta name="twitter:description" content="标题：使用Node Express优雅的启动一个服务 相信作为一名前端人来说，Node这门技术是经常在耳边听起，甚至已经开始在使用了。但不管怎么样，今天我还是要给大家聊聊它。所谓的Node其实它是javascript编写的服务器语言，同时它又是属于后台的框架，是一个开放性的平台；Node是一个基于 Chrome V8 引擎的 JavaScript 运行环境。 Node 使用了一个事件驱动、非阻塞式">
   
     <link rel="alternative" href="/atom.xml" title="桃子的博客" type="application/atom+xml">
   
@@ -157,60 +159,212 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-nodeserver" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/26/vue-case/" class="archive-article-date">
-  	<time datetime="2017-10-26T05:23:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-26</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/26/vue-case/">通过todoList案例对Vuejs全面的基础学习</a>
+    <h1 class="article-title" itemprop="name">
+      nodeserver
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/01/06/nodeserver/" class="archive-article-date">
+  	<time datetime="2018-01-06T08:46:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>标题：使用Node Express优雅的启动一个服务</p>
+<p>相信作为一名前端人来说，Node这门技术是经常在耳边听起，甚至已经开始在使用了。但不管怎么样，今天我还是要给大家聊聊它。<br>所谓的Node其实它是javascript编写的服务器语言，同时它又是属于后台的框架，是一个开放性的平台；Node是一个基于 Chrome V8 引擎的 JavaScript 运行环境。 Node 使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。</p>
+<p>我们在使用Node前，首先我们需要在自己的电脑上安装它，安装其实很简单，大家可以去百度搜索Nodejs，然后进入官网下载一个基于自己系统的安装包，下载好后，直接打开安装包然后不断的Next到一直结束即可。</p>
+<p>在完成Node安装之后，就可以创建一个基于Node的服务器了，其实起一个服务也是相当简单的，下面我给大家取来了官网的一个例子，然后再来说明其寓意，下面看代码：</p>
+<pre><code>const http = require(&apos;http&apos;);
+
+const hostname = &apos;127.0.0.1&apos;;
+const port = 3000;
+
+const server = http.createServer((req, res) =&gt; {
+  res.statusCode = 200;
+  res.setHeader(&apos;Content-Type&apos;, &apos;text/plain&apos;);
+  res.end(&apos;Hello World\n&apos;);
+});
+
+server.listen(port, hostname, () =&gt; {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+</code></pre><p>上面那段就是使用Node起的一个服务，首先先引入了一个http模块，这个模块是Node内置的一个接口，然后通过这个接口使用createServer方法来创建一个服务，可传递一个回调函数，回调函数可以接受两个参数，req就是request(请求)，res就是response(响应)，我们这里通过响应来确定当前的服务是否创建成功，然后可以设置相关的头信息及反馈内容。然后通过listen方法来设置访问地址及端口，通过回调函数就能打印出当前服务的启动地址。至此一个服务就这样子跑起来了，大家可以去体验一下，下面咱们就来说说Express。</p>
+<p>在说Express之前，先说下如何去运行上面的那段代码，可能对Node不太了解的朋友已经懵逼了，可能会问这个代码要怎么去运行，浏览器里面吗？那就大错特错了，如果不熟悉的朋友，你们可以按照我说的方式来运行代码，就能去看自己写的这个服务了。首先，大家需要按一下键盘左下角ctrl键靠右的windows键，然后在搜索框内搜索cmd回车就会弹出一个cmd的命令行窗口，然后需要通过命令行去找到所在的项目目录，比如我的文件在E盘下的server目录，名字就叫server.js，这个时候我们需要通过命令 “E:” 然后回车，然后通过cd进入到server目录“cd sever”，然后通过node运行server.js文件“node server.js”,这样就成功的启动了这个服务。</p>
+<p>说完了Node创建服务，现在我们来说说Express。Express 是一个基于 Node.js 平台的极简、灵活的 web 应用开发框架，它提供一系列强大的特性，帮助你创建各种 Web 和移动设备应用。我们在使用Express前，需要把关于Express的依赖文件给安装到项目里面来，其实安装起来是非常简单的，我们需要使用Node的NPM包管理工具来为我们做项目的依赖处理，NPM是随同NodeJS一起安装的包管理工具，能解决NodeJS代码部署上的很多问题。</p>
+<p>下面我们需要回到刚才的那个server目录，然后继续执行命令，使用“npm init”来为我们项目生成一个名叫package.json的配置文件，一路回车最后输入一个“yes”然后回车，回到目录查看就能看见这个文件，当然这个文件具体是有何作用大家可以下去后具体了解，这里我就不做讲解了，如果你完成了配置文件的生产，下面就可以开始安装Express了：</p>
+<p>在cdm内执行命令<br>    npm install express –save</p>
+<p>等待上方下载完成后，Express就会安装进我们项目里面来了。</p>
+<p>如果以上步骤你都做完了，那现在就可以使用Express来创建一个web服务了，具体代码如下：</p>
+<p>我写了一些路由，匹配前端请求的路径名，然后返回前端一些字符串（因为我用的是res.end()方法，只能接受字符串和buffer所以我这里返回的是字符串）</p>
+<pre><code>//引入express框架
+let express=require(&apos;express&apos;);
+
+//定义一个变量调用express各种方法
+let app=express();
+
+/* app上有很多匹配请求方法 app.get app.post app.put app.delet
+app定义路由，其实也是一个函数，定义的很多方法
+当客户端以GET方式访问服务器/路由时候，会有那个函数进行处理 */
+app.get(&apos;/&apos;,function (req,res) {
+     res.end(&apos;home&apos;);
+})
+
+/*当客户的以get方式访问服务器/user路径时候，会有那个函数进行处理
+ 三部分 请求 路径 函数 */
+app.get(&apos;/user&apos;,function (req,res) {
+     res.end(&apos;user&apos;);
+})
+
+/* app.all能匹配所有的方法，不管客户端请求过来的方法名是什么，都能匹配上
+所以这个方法一定要放在最后面，意思上前面都没有匹配中后，匹配all */
+// * 代表所有的路径
+app.all(&apos;*&apos;,function (req,res) {
+     res.end(&apos;not found&apos;)
+})
+
+//我们要监控我们的服务端口号
+app.listen(8080);
+
+/* listen源码
+var http = require(&apos;http&apos;);
+app.listen = function listen() {
+     var server = http.createServer(this);
+     return server.listen.apply(server, arguments);
+};
+*/
+</code></pre><p>上面就是利用express启动一个server服务的方法，代码的寓意我在上方也做了注释，说的都是基本的基础知识，希望能帮到你们，给你们提供参考吧。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/01/06/nodeserver/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/10/26/vue-case/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">通过todoList案例对Vuejs全面的基础学习</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+  
+  
   
 
-    
+  
+
+  
 
 
           </div>
@@ -233,8 +387,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

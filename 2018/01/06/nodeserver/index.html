@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>nodeserver | 桃子的博客</title>
+  <title>使用Node Express优雅的启动一个服务 | 桃子的博客</title>
   <meta name="keywords" content="小桃子,桃子博客,HTML5技术广场,JavaScript技术栈,前端三大巨头,前端自动化">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="标题：使用Node Express优雅的启动一个服务 相信作为一名前端人来说，Node这门技术是经常在耳边听起，甚至已经开始在使用了。但不管怎么样，今天我还是要给大家聊聊它。所谓的Node其实它是javascript编写的服务器语言，同时它又是属于后台的框架，是一个开放性的平台；Node是一个基于 Chrome V8 引擎的 JavaScript 运行环境。 Node 使用了一个事件驱动、非阻塞式">
+  <meta name="description" content="相信作为一名前端人来说，Node这门技术是经常在耳边听起，甚至已经开始在使用了。但不管怎么样，今天我还是要给大家聊聊它。所谓的Node其实它是javascript编写的服务器语言，同时它又是属于后台的框架，是一个开放性的平台；Node是一个基于 Chrome V8 引擎的 JavaScript 运行环境。 Node 使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。 我们在使用Node">
 <meta name="keywords" content="node">
 <meta property="og:type" content="article">
-<meta property="og:title" content="nodeserver">
+<meta property="og:title" content="使用Node Express优雅的启动一个服务">
 <meta property="og:url" content="http://yoursite.com/2018/01/06/nodeserver/index.html">
 <meta property="og:site_name" content="桃子的博客">
-<meta property="og:description" content="标题：使用Node Express优雅的启动一个服务 相信作为一名前端人来说，Node这门技术是经常在耳边听起，甚至已经开始在使用了。但不管怎么样，今天我还是要给大家聊聊它。所谓的Node其实它是javascript编写的服务器语言，同时它又是属于后台的框架，是一个开放性的平台；Node是一个基于 Chrome V8 引擎的 JavaScript 运行环境。 Node 使用了一个事件驱动、非阻塞式">
-<meta property="og:updated_time" content="2018-01-06T08:48:26.776Z">
+<meta property="og:description" content="相信作为一名前端人来说，Node这门技术是经常在耳边听起，甚至已经开始在使用了。但不管怎么样，今天我还是要给大家聊聊它。所谓的Node其实它是javascript编写的服务器语言，同时它又是属于后台的框架，是一个开放性的平台；Node是一个基于 Chrome V8 引擎的 JavaScript 运行环境。 Node 使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。 我们在使用Node">
+<meta property="og:updated_time" content="2018-01-06T09:23:06.608Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="nodeserver">
-<meta name="twitter:description" content="标题：使用Node Express优雅的启动一个服务 相信作为一名前端人来说，Node这门技术是经常在耳边听起，甚至已经开始在使用了。但不管怎么样，今天我还是要给大家聊聊它。所谓的Node其实它是javascript编写的服务器语言，同时它又是属于后台的框架，是一个开放性的平台；Node是一个基于 Chrome V8 引擎的 JavaScript 运行环境。 Node 使用了一个事件驱动、非阻塞式">
+<meta name="twitter:title" content="使用Node Express优雅的启动一个服务">
+<meta name="twitter:description" content="相信作为一名前端人来说，Node这门技术是经常在耳边听起，甚至已经开始在使用了。但不管怎么样，今天我还是要给大家聊聊它。所谓的Node其实它是javascript编写的服务器语言，同时它又是属于后台的框架，是一个开放性的平台；Node是一个基于 Chrome V8 引擎的 JavaScript 运行环境。 Node 使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。 我们在使用Node">
   
     <link rel="alternative" href="/atom.xml" title="桃子的博客" type="application/atom+xml">
   
@@ -166,7 +166,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      nodeserver
+      使用Node Express优雅的启动一个服务
     </h1>
   
 
@@ -179,8 +179,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>标题：使用Node Express优雅的启动一个服务</p>
-<p>相信作为一名前端人来说，Node这门技术是经常在耳边听起，甚至已经开始在使用了。但不管怎么样，今天我还是要给大家聊聊它。<br>所谓的Node其实它是javascript编写的服务器语言，同时它又是属于后台的框架，是一个开放性的平台；Node是一个基于 Chrome V8 引擎的 JavaScript 运行环境。 Node 使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。</p>
+        <p>相信作为一名前端人来说，Node这门技术是经常在耳边听起，甚至已经开始在使用了。但不管怎么样，今天我还是要给大家聊聊它。<br>所谓的Node其实它是javascript编写的服务器语言，同时它又是属于后台的框架，是一个开放性的平台；Node是一个基于 Chrome V8 引擎的 JavaScript 运行环境。 Node 使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。</p>
 <p>我们在使用Node前，首先我们需要在自己的电脑上安装它，安装其实很简单，大家可以去百度搜索Nodejs，然后进入官网下载一个基于自己系统的安装包，下载好后，直接打开安装包然后不断的Next到一直结束即可。</p>
 <p>在完成Node安装之后，就可以创建一个基于Node的服务器了，其实起一个服务也是相当简单的，下面我给大家取来了官网的一个例子，然后再来说明其寓意，下面看代码：</p>
 <pre><code>const http = require(&apos;http&apos;);
@@ -460,11 +459,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">html5</a>
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">sublime</a>
+                <a href="javascript:void(0)" class="js-tag color1">html5</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -472,7 +471,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+                <a href="javascript:void(0)" class="js-tag color1">Javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">sublime</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -481,10 +484,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Javascript</a>
               </li>
             
             <div class="clearfix"></div>
